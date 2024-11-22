@@ -1,0 +1,12 @@
+The following is a C# interface that consists of the only methods that are available to program a 3D multiplayer game. Use this interface and standard C# operators, keywords, and syntax to write a single method, `CircuitGraph`, to accomplish the following task. Do NOT use ANY OTHER C# functions to complete the method, including those from `System`, as well as instance methods. `CiruitGraph` exists in a class that implements `IChips`, so the methods can be called directly. Any variables that are used must be declared in the root scope of `CircuitGraph`.
+
+Respond with only the method. It should be written in the following format:
+```cs
+public override void CircuitGraph()
+{
+    // Unique functionality goes here
+}
+```
+
+Task:
+Log the first 10 fibonacci numbers.

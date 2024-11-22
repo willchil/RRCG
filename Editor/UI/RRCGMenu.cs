@@ -83,6 +83,11 @@ public class RRCGMenu
         Debug.Log("Projects cleaned!");
     }
 
-
+    [MenuItem("RRCG/Generate Interface", priority = 40)]
+    static void GenerateInterface()
+    {
+        RRCGSource.GenerateChipsInterface.Generate();
+        Debug.Log("Generate chip interface!");
+    }
 }
 
