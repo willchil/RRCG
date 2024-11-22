@@ -83,6 +83,11 @@ public class RRCGMenu
         Debug.Log("Projects cleaned!");
     }
 
-
+    [MenuItem("RRCG/Graph Generator", priority = 20)]
+    static void PromptWindow()
+    {
+        PromptWindow window = EditorWindow.GetWindow<PromptWindow>("Graph Generator Prompt");
+        window.minSize = new Vector2(300, 200);
+    }
 }
 

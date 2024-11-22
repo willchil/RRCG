@@ -1,0 +1,11 @@
+using System.Collections.Generic;
+using RRCG;
+using RRCGSource;
+using UnityEngine;
+
+public class [CLASS] : CircuitDescriptor
+{
+    [SCRIPT]
+}
+
+

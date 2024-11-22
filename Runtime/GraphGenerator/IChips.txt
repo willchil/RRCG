@@ -1,0 +1,2551 @@
+using System.Collections.Generic;
+using UnityEngine;
+using RRCGSource;
+using RRCG;
+using Light = RRCGSource.Light;
+
+
+namespace RRCGGenerated
+{
+    public interface IChipsGen
+    {
+        // Absolute Value
+        float AbsoluteValue(float value);
+        int AbsoluteValue(int value);
+
+        // Acos
+        float Acos(float value);
+
+        // Add Tag
+        void AddTag(Player target, string tag);
+        void AddTag(RecRoomObject target, string tag);
+
+        // Add Tags
+        void AddTags(Player target, List<string> tags);
+        void AddTags(RecRoomObject target, List<string> tags);
+
+        // AI Get Target
+        Combatant AIGetTargetR1(AI aI);
+
+        // AI Has Line Of Sight To Target
+        bool AIHasLineOfSightToTargetR1(AI aI, AI target);
+        bool AIHasLineOfSightToTargetR1(AI aI, Combatant target);
+        bool AIHasLineOfSightToTargetR1(AI aI, RecRoomObject target);
+        bool AIHasLineOfSightToTargetR1(AI aI, PatrolPoint target);
+        bool AIHasLineOfSightToTargetR1(AI aI, Player target);
+        bool AIHasLineOfSightToTargetR1(AI aI, Vector3 target);
+
+        // AI Look At
+        void AILookAtR1(AI aI, AI lookTarget, bool lookTargetIsDirection);
+        void AILookAtR1(AI aI, Combatant lookTarget, bool lookTargetIsDirection);
+        void AILookAtR1(AI aI, RecRoomObject lookTarget, bool lookTargetIsDirection);
+        void AILookAtR1(AI aI, PatrolPoint lookTarget, bool lookTargetIsDirection);
+        void AILookAtR1(AI aI, Player lookTarget, bool lookTargetIsDirection);
+        void AILookAtR1(AI aI, Vector3 lookTarget, bool lookTargetIsDirection);
+
+        // AI Path To
+        void AIPathToR1(AI aI, AI target);
+        void AIPathToR1(AI aI, Combatant target);
+        void AIPathToR1(AI aI, RecRoomObject target);
+        void AIPathToR1(AI aI, PatrolPoint target);
+        void AIPathToR1(AI aI, Player target);
+        void AIPathToR1(AI aI, Vector3 target);
+
+        // AI Rotate
+        void AIRotateR1(AI aI, float rotation);
+        void AIRotateR1(AI aI, int rotation);
+        void AIRotateR1(AI aI, Vector3 rotation);
+
+        // AI Set Line Of Sight Parameters
+        void AISetLineOfSightParametersR1(AI aI, string visionType, float visionRange, float visionConeAngle, float hearingRange, bool requireLoSForTargeting);
+
+        // AI Set Pathing Speed
+        void AISetPathingSpeedR1(AI aI, float speed);
+
+        // AI Set Patrol Point
+        void AISetPatrolPointR1(AI aI, PatrolPoint patrolPoint);
+
+        // AI Set Target
+        void AISetTargetR1(AI aI, Combatant target);
+
+        // AI Start Combat Behavior
+        void AIStartCombatBehaviorR1(AI aI);
+
+        // AI Stop Combat Behavior
+        void AIStopCombatBehaviorR1(AI aI);
+
+        // AI Stop Looking
+        void AIStopLookingR1(AI aI);
+
+        // Ambience Constant
+        Audio AmbienceConstant();
+
+        // And
+        bool And(params bool[] input);
+
+        // Angular Velocity Add
+        bool AngularVelocityAdd(RecRoomObject target, Vector3 angularVelocity, float speedMultiplier, float maxAngularSpeed);
+
+        // Angular Velocity Set
+        bool AngularVelocitySet(RecRoomObject target, Vector3 angularVelocity, float speedMultiplier);
+
+        // Animation Get Frame
+        int AnimationGetFrame(AnimationController animator);
+
+        // Animation Get Is Playing
+        bool AnimationGetIsPlaying(AnimationController animator);
+
+        // Animation Get Speed
+        float AnimationGetSpeed(AnimationController animator);
+
+        // Animation Get Time Stamp
+        float AnimationGetTimeStamp(AnimationController animator);
+
+        // Animation Pause
+        void AnimationPause(AnimationController animator);
+
+        // Animation Play
+        void AnimationPlay(AnimationController animator);
+
+        // Animation Set Frame
+        void AnimationSetFrame(AnimationController animator, int frameNumber);
+
+        // Animation Set Speed
+        void AnimationSetSpeed(AnimationController animator, float speed);
+
+        // Animation Set Time Stamp
+        void AnimationSetTimeStamp(AnimationController animator, float timeStamp);
+
+        // Animation Stop
+        void AnimationStop(AnimationController animator);
+
+        // Asin
+        float Asin(float value);
+
+        // Atan
+        float Atan(float value);
+
+        // Atan 2
+        float Atan2(float y, float x);
+
+        // Audio Fx Zone Get Intensity
+        float AudioFXZoneGetIntensity(AudioFXZone target);
+
+        // Audio Fx Zone Get Priority
+        int AudioFXZoneGetPriority(AudioFXZone target);
+
+        // Audio Fx Zone Set Effect
+        void AudioFXZoneSetEffect(AudioFXZone target);
+
+        // Audio Fx Zone Set Intensity
+        void AudioFXZoneSetIntensity(AudioFXZone target, float intensity);
+
+        // Audio Fx Zone Set Priority
+        void AudioFXZoneSetPriority(AudioFXZone target, int priority);
+
+        // Audio Get Length
+        float AudioGetLength(Audio audio);
+
+        // Audio Player Get Audio
+        Audio AudioPlayerGetAudio(AudioPlayer target);
+
+        // Audio Player Get Max Rolloff Distance
+        float AudioPlayerGetMaxRolloffDistance(AudioPlayer target);
+
+        // Audio Player Get Playing
+        bool AudioPlayerGetPlaying(AudioPlayer target);
+
+        // Audio Player Get Speed
+        float AudioPlayerGetSpeed(AudioPlayer target);
+
+        // Audio Player Get Time Stamp
+        float AudioPlayerGetTimeStamp(AudioPlayer target);
+
+        // Audio Player Get Volume
+        float AudioPlayerGetVolume(AudioPlayer target);
+
+        // Audio Player Pause
+        void AudioPlayerPause(AudioPlayer target);
+
+        // Audio Player Play
+        void AudioPlayerPlay(AudioPlayer target, Audio audio);
+
+        // Audio Player Set Max Rolloff Distance
+        void AudioPlayerSetMaxRolloffDistance(AudioPlayer target, float maxRolloffDistance);
+
+        // Audio Player Set Speed
+        void AudioPlayerSetSpeed(AudioPlayer target, float speed);
+
+        // Audio Player Set Time Stamp
+        void AudioPlayerSetTimeStamp(AudioPlayer target, float timeStamp);
+
+        // Audio Player Set Volume
+        void AudioPlayerSetVolume(AudioPlayer target, float volume);
+
+        // Audio Player Stop
+        void AudioPlayerStop(AudioPlayer target);
+
+        // Award Consumable
+        bool AwardConsumableR1(Consumable consumable, Player player, int quantity, AlternativeExec<bool> onAwardConsumableComplete);
+
+        // Award Room Key
+        bool AwardRoomKeyR1(RoomKey roomKey, Player player, AlternativeExec<bool> onAwardRoomKeyComplete);
+
+        // Background Objects Constant
+        BackgroundObjects BackgroundObjectsConstant();
+
+        // Beacon Get Color
+        Color BeaconGetColor(Beacon target);
+
+        // Beacon Get Enabled
+        bool BeaconGetEnabled(Beacon target);
+
+        // Beacon Get Height
+        float BeaconGetHeight(Beacon target);
+
+        // Beacon Set Color
+        void BeaconSetColor(Beacon target, Color color);
+
+        // Beacon Set Enabled
+        void BeaconSetEnabled(Beacon target, bool enabled);
+
+        // Beacon Set Height
+        void BeaconSetHeight(Beacon target, float height);
+
+        // Bit And
+        int BitAnd(int port0, int port1);
+
+        // Bit Leading Zeros
+        int BitLeadingZeros(int value);
+
+        // Bit Nand
+        int BitNand(int port0, int port1);
+
+        // Bit Not
+        int BitNot(int port0);
+
+        // Bit Or
+        int BitOr(int port0, int port1);
+
+        // Bit Pop Count
+        int BitPopCount(int value);
+
+        // Bit Rotate Left
+        int BitRotateLeft(int value, int shift);
+
+        // Bit Rotate Right
+        int BitRotateRight(int value, int shift);
+
+        // Bit Shift Left
+        int BitShiftLeft(int value, int shift);
+
+        // Bit Shift Right
+        int BitShiftRight(int value, int shift);
+
+        // Bit Trailing Zeros
+        int BitTrailingZeros(int value);
+
+        // Bit Xor
+        int BitXor(int port0, int port1);
+
+        // Button Get Is Pressed
+        bool ButtonGetIsPressed(Button target);
+
+        // Button Get Text
+        string ButtonGetText(Button target);
+
+        // Button Set Text
+        void ButtonSetText(Button target, string text);
+
+        // Ceil
+        float Ceil(float value);
+
+        // Ceil To Int
+        int CeilToInt(float value);
+
+        // Clamp
+        float Clamp(float value, float min, float max);
+        int Clamp(int value, int min, int max);
+
+        // Clear Player Vignette
+        void ClearPlayerVignette(Player player);
+
+        // Clear Player World UI
+        void ClearPlayerWorldUI(Player player);
+
+        // Clear Screen
+        void ClearScreen(TextScreen target);
+
+        // Collision Data Get Distance
+        float CollisionDataGetDistance(CollisionData target);
+
+        // Collision Data Get Normal
+        Vector3 CollisionDataGetNormal(CollisionData target);
+
+        // Collision Data Get Object
+        RecRoomObject CollisionDataGetObject(CollisionData target);
+
+        // Collision Data Get Player
+        Player CollisionDataGetPlayer(CollisionData target);
+
+        // Collision Data Get Position
+        Vector3 CollisionDataGetPosition(CollisionData target);
+
+        // Collision Detection Volume Get Enabled
+        bool CollisionDetectionVolumeGetEnabled(CollisionDetectionVolume target);
+
+        // Collision Detection Volume Set Enabled
+        void CollisionDetectionVolumeSetEnabled(CollisionDetectionVolume target, bool enabled);
+
+        // Color Constant
+        Color ColorConstant();
+
+        // Combatant Get Ground Position
+        Vector3 CombatantGetGroundPositionR1(AI combatant);
+        Vector3 CombatantGetGroundPositionR1(Combatant combatant);
+        Vector3 CombatantGetGroundPositionR1(Player combatant);
+
+        // Combatant Get Is Alive
+        bool CombatantGetIsAliveR1(AI @object);
+        bool CombatantGetIsAliveR1(Combatant @object);
+        bool CombatantGetIsAliveR1(Player @object);
+
+        // Combatant Receive Damage
+        void CombatantReceiveDamageR1(AI target, int damage, bool ignoreShield, AI damageSource);
+        void CombatantReceiveDamageR1(AI target, int damage, bool ignoreShield, Combatant damageSource);
+        void CombatantReceiveDamageR1(AI target, int damage, bool ignoreShield, Player damageSource);
+        void CombatantReceiveDamageR1(Combatant target, int damage, bool ignoreShield, AI damageSource);
+        void CombatantReceiveDamageR1(Combatant target, int damage, bool ignoreShield, Combatant damageSource);
+        void CombatantReceiveDamageR1(Combatant target, int damage, bool ignoreShield, Player damageSource);
+        void CombatantReceiveDamageR1(Player target, int damage, bool ignoreShield, AI damageSource);
+        void CombatantReceiveDamageR1(Player target, int damage, bool ignoreShield, Combatant damageSource);
+        void CombatantReceiveDamageR1(Player target, int damage, bool ignoreShield, Player damageSource);
+
+        // Combatant Set Health
+        void CombatantSetHealthR1(AI target, int health);
+        void CombatantSetHealthR1(Combatant target, int health);
+        void CombatantSetHealthR1(Player target, int health);
+
+        // Combatant Set Max Health
+        void CombatantSetMaxHealthR1(AI target, int maxHealth);
+        void CombatantSetMaxHealthR1(Combatant target, int maxHealth);
+        void CombatantSetMaxHealthR1(Player target, int maxHealth);
+
+        // Comment
+        void Comment();
+
+        // Community Event Constant
+        object CommunityEventConstant();
+
+        // Consumable Activate
+        void ConsumableActivateR1(Consumable consumable);
+
+        // Consumable Constant
+        Consumable ConsumableConstantR1(RoomConsumableData config);
+
+        // Consumable Deactivate
+        void ConsumableDeactivateR1(Consumable consumable);
+
+        // Cos
+        float Cos(float value);
+
+        // Costume Equip
+        void CostumeEquip(Costume target, Player player);
+
+        // Costume Get Wearer
+        Player CostumeGetWearer(Costume target);
+
+        // Costume Unequip
+        Player CostumeUnequip(Costume target);
+
+        // Data Table
+        void DataTable(object port0, DataTableDefinitionData config);
+
+        // Data Table Get Column Count
+        int DataTableGetColumnCount(DataTableData config);
+
+        // Data Table Get Row Count
+        int DataTableGetRowCount(DataTableData config);
+
+        // Delay
+        void Delay(float delay, AlternativeExec afterDelay, AlternativeExec cancel);
+
+        // Destination Room Constant
+        DestinationRoom DestinationRoomConstant();
+
+        // Dialogue UI Get Billboarding Pivot Offset
+        Vector3 DialogueUIGetBillboardingPivotOffset(DialogueUI target);
+
+        // Dialogue UI Get Is Enabled
+        bool DialogueUIGetIsEnabled(DialogueUI target);
+
+        // Dialogue UI Get Title Is Enabled
+        bool DialogueUIGetTitleIsEnabled(DialogueUI target);
+
+        // Dialogue UI Get Title Text
+        string DialogueUIGetTitleText(DialogueUI target);
+
+        // Dialogue UI Set Billboarding Pivot Offset
+        void DialogueUISetBillboardingPivotOffset(DialogueUI target, Vector3 offset);
+
+        // Dialogue UI Set Button State
+        void DialogueUISetButtonState(DialogueUI target, bool button1Enabled, string button1Text, bool button2Enabled, string button2Text, bool button3Enabled, string button3Text, bool button4Enabled, string button4Text);
+
+        // Dialogue UI Set Dialogue Text
+        void DialogueUISetDialogueText(DialogueUI target, string bodyText, bool isInteractive);
+
+        // Dialogue UI Set Is Enabled
+        void DialogueUISetIsEnabled(DialogueUI target, bool isEnabled);
+
+        // Dialogue UI Set Title Is Enabled
+        void DialogueUISetTitleIsEnabled(DialogueUI target, bool isEnabled);
+
+        // Dialogue UI Set Title Text
+        void DialogueUISetTitleText(DialogueUI target, string titleText);
+
+        // Dice Get Player Rolled
+        Player DiceGetPlayerRolled(Die target);
+
+        // Dice Get Result
+        int DiceGetResult(Die target);
+
+        // Dice Get Roll Finished
+        bool DiceGetRollFinished(Die target);
+
+        // Display Player World UI
+        void DisplayPlayerWorldUI(PlayerWorldUI target, Player player);
+
+        // Distance
+        float Distance(AI a, AI b);
+        float Distance(AI a, Combatant b);
+        float Distance(AI a, RecRoomObject b);
+        float Distance(AI a, Player b);
+        float Distance(AI a, Vector3 b);
+        float Distance(Combatant a, AI b);
+        float Distance(Combatant a, Combatant b);
+        float Distance(Combatant a, RecRoomObject b);
+        float Distance(Combatant a, Player b);
+        float Distance(Combatant a, Vector3 b);
+        float Distance(RecRoomObject a, AI b);
+        float Distance(RecRoomObject a, Combatant b);
+        float Distance(RecRoomObject a, RecRoomObject b);
+        float Distance(RecRoomObject a, Player b);
+        float Distance(RecRoomObject a, Vector3 b);
+        float Distance(Player a, AI b);
+        float Distance(Player a, Combatant b);
+        float Distance(Player a, RecRoomObject b);
+        float Distance(Player a, Player b);
+        float Distance(Player a, Vector3 b);
+        float Distance(Vector3 a, AI b);
+        float Distance(Vector3 a, Combatant b);
+        float Distance(Vector3 a, RecRoomObject b);
+        float Distance(Vector3 a, Player b);
+        float Distance(Vector3 a, Vector3 b);
+
+        // Divide
+        int Divide(params int[] value);
+        float Divide(params float[] value);
+        Vector3 Divide(params Vector3[] value);
+
+        // Door Get Destination
+        DestinationRoom DoorGetDestinationR1(RoomDoor target);
+
+        // Door Get Locked
+        bool DoorGetLockedR1(RoomDoor target);
+
+        // Door Set Destination
+        void DoorSetDestinationR1(RoomDoor target, DestinationRoom room);
+
+        // Door Set Locked
+        void DoorSetLockedR1(RoomDoor target, bool locked);
+
+        // Emitter Get Looping
+        bool EmitterGetLooping(Emitter target);
+
+        // Emitter Get Playing
+        bool EmitterGetPlaying(Emitter target);
+
+        // Emitter Get Size
+        float EmitterGetSize(Emitter target);
+
+        // Emitter Get Speed
+        float EmitterGetSpeed(Emitter target);
+
+        // Emitter Set Color
+        void EmitterSetColor(Emitter target, Color color);
+
+        // Emitter Set Looping
+        void EmitterSetLooping(Emitter target, bool value);
+
+        // Emitter Set Size
+        void EmitterSetSize(Emitter target, float value);
+
+        // Emitter Set Speed
+        void EmitterSetSpeed(Emitter target, float value);
+
+        // Emitter Start
+        void EmitterStart(Emitter target);
+
+        // Emitter Stop
+        void EmitterStop(Emitter target);
+
+        // Equipment Slot
+        EquipmentSlot EquipmentSlotR2();
+
+        // Equip Object To Dominant Hand
+        bool EquipObjectToDominantHand(Player player, RecRoomObject objectToEquip, bool forceEquip, bool steal);
+
+        // Equip Object To Off Hand
+        bool EquipObjectToOffHand(Player player, RecRoomObject objectToEquip, bool forceEquip, bool steal);
+
+        // Equip Share Camera
+        bool EquipShareCamera(Player player, bool forceEquip);
+
+        // Explosion Emitter Explode
+        void ExplosionEmitterExplode(ExplosionEmitter target);
+
+        // Explosion Emitter Get Damage
+        int ExplosionEmitterGetDamage(ExplosionEmitter target);
+
+        // Explosion Emitter Get Explosion Color
+        Color ExplosionEmitterGetExplosionColor(ExplosionEmitter target);
+
+        // Explosion Emitter Get Explosion Radius
+        float ExplosionEmitterGetExplosionRadius(ExplosionEmitter target);
+
+        // Explosion Emitter Get Firing Player
+        Player ExplosionEmitterGetFiringPlayer(ExplosionEmitter target);
+
+        // Explosion Emitter Set Damage
+        void ExplosionEmitterSetDamage(ExplosionEmitter target, int damage);
+
+        // Explosion Emitter Set Explosion Color
+        void ExplosionEmitterSetExplosionColor(ExplosionEmitter target, Color color);
+
+        // Explosion Emitter Set Explosion Radius
+        void ExplosionEmitterSetExplosionRadius(ExplosionEmitter target, float radius);
+
+        // Explosion Emitter Set Firing Player
+        void ExplosionEmitterSetFiringPlayer(ExplosionEmitter target, Player player);
+
+        // Floor
+        float Floor(float value);
+
+        // Floor To Int
+        int FloorToInt(float value);
+
+        // Fog Constant
+        Fog FogConstant(FogData config);
+
+        // Function Definition
+        void FunctionDefinition();
+
+        // Function Out
+        void FunctionOut();
+
+        // Game HUD Element Constant
+        HUDElement GameHUDElementConstant();
+
+        // Get Angular Velocity
+        Vector3 GetAngularVelocity(RecRoomObject target);
+
+        // Get Any Player With Role
+        Player GetAnyPlayerWithRoleR1(string role);
+
+        // Get Authority
+        Player GetAuthority();
+
+        // Get First Tag
+        string GetFirstTag(Player target);
+        string GetFirstTag(RecRoomObject target);
+
+        // Get Formatted Time
+        string GetFormattedTime(float universalSeconds, string format);
+        string GetFormattedTime(int universalSeconds, string format);
+
+        // Get Forward Vector
+        Vector3 GetForwardVector(RecRoomObject target);
+        Vector3 GetForwardVector(Player target);
+
+        // Get HUD Element Color
+        Color GetHUDElementColor(HUDConstant target);
+
+        // Get HUD Element Enabled
+        bool GetHUDElementEnabled(HUDConstant target);
+
+        // Get HUD Element Label
+        string GetHUDElementLabel(HUDConstant target);
+
+        // Get HUD Element Max Value
+        int GetHUDElementMaxValue(HUDConstant target);
+
+        // Get HUD Element Value
+        int GetHUDElementValue(HUDConstant target);
+
+        // Get Inventory Item From Name
+        InventoryItem GetInventoryItemFromNameR2(string name);
+
+        // Get Loading Players
+        int GetLoadingPlayers();
+
+        // Get Local Camera Forward
+        Vector3 GetLocalCameraForward();
+
+        // Get Local Camera Position
+        Vector3 GetLocalCameraPosition();
+
+        // Get Local Camera Rotation
+        Quaternion GetLocalCameraRotation();
+
+        // Get Local Camera Up
+        Vector3 GetLocalCameraUp();
+
+        // Get Local Player
+        Player GetLocalPlayer();
+
+        // Get New Line
+        string GetNewLine();
+
+        // Get Player Account Name
+        string GetPlayerAccountName(Player player);
+
+        // Get Player By Account Name
+        Player GetPlayerByAccountName(string name);
+
+        // Get Player By Display Name
+        Player GetPlayerByDisplayName(string name);
+
+        // Get Player World UI Enabled
+        bool GetPlayerWorldUIEnabled(Player target);
+
+        // Get Player World UI Primary Bar Color
+        Color GetPlayerWorldUIPrimaryBarColor(Player target);
+
+        // Get Player World UI Primary Bar Enabled
+        bool GetPlayerWorldUIPrimaryBarEnabled(Player target);
+
+        // Get Player World UI Primary Bar Max Value
+        int GetPlayerWorldUIPrimaryBarMaxValue(Player target);
+
+        // Get Player World UI Primary Bar Value
+        int GetPlayerWorldUIPrimaryBarValue(Player target);
+
+        // Get Player World UI Secondary Bar Color
+        Color GetPlayerWorldUISecondaryBarColor(Player target);
+
+        // Get Player World UI Secondary Bar Enabled
+        bool GetPlayerWorldUISecondaryBarEnabled(Player target);
+
+        // Get Player World UI Secondary Bar Max Value
+        int GetPlayerWorldUISecondaryBarMaxValue(Player target);
+
+        // Get Player World UI Secondary Bar Value
+        int GetPlayerWorldUISecondaryBarValue(Player target);
+
+        // Get Player World UI Text Color
+        Color GetPlayerWorldUITextColor(Player target);
+
+        // Get Player World UI Text Enabled
+        bool GetPlayerWorldUITextEnabled(Player target);
+
+        // Get Player World UI Text Value
+        string GetPlayerWorldUITextValue(Player target);
+
+        // Get Position
+        Vector3 GetPosition(AI target);
+        Vector3 GetPosition(Combatant target);
+        Vector3 GetPosition(RecRoomObject target);
+        Vector3 GetPosition(Player target);
+
+        // Get Position In Reference Object Space
+        Vector3 GetPositionInReferenceObjectSpace(AI target, AI referenceObject);
+        Vector3 GetPositionInReferenceObjectSpace(AI target, Combatant referenceObject);
+        Vector3 GetPositionInReferenceObjectSpace(AI target, RecRoomObject referenceObject);
+        Vector3 GetPositionInReferenceObjectSpace(AI target, Player referenceObject);
+        Vector3 GetPositionInReferenceObjectSpace(Combatant target, AI referenceObject);
+        Vector3 GetPositionInReferenceObjectSpace(Combatant target, Combatant referenceObject);
+        Vector3 GetPositionInReferenceObjectSpace(Combatant target, RecRoomObject referenceObject);
+        Vector3 GetPositionInReferenceObjectSpace(Combatant target, Player referenceObject);
+        Vector3 GetPositionInReferenceObjectSpace(RecRoomObject target, AI referenceObject);
+        Vector3 GetPositionInReferenceObjectSpace(RecRoomObject target, Combatant referenceObject);
+        Vector3 GetPositionInReferenceObjectSpace(RecRoomObject target, RecRoomObject referenceObject);
+        Vector3 GetPositionInReferenceObjectSpace(RecRoomObject target, Player referenceObject);
+        Vector3 GetPositionInReferenceObjectSpace(Player target, AI referenceObject);
+        Vector3 GetPositionInReferenceObjectSpace(Player target, Combatant referenceObject);
+        Vector3 GetPositionInReferenceObjectSpace(Player target, RecRoomObject referenceObject);
+        Vector3 GetPositionInReferenceObjectSpace(Player target, Player referenceObject);
+
+        // Get Room Authority
+        Player GetRoomAuthority();
+
+        // Get Rotation
+        Quaternion GetRotation(RecRoomObject target);
+        Quaternion GetRotation(Player target);
+
+        // Get Rotation In Reference Object Space
+        Quaternion GetRotationInReferenceObjectSpace(RecRoomObject target, RecRoomObject referenceObject);
+        Quaternion GetRotationInReferenceObjectSpace(RecRoomObject target, Player referenceObject);
+        Quaternion GetRotationInReferenceObjectSpace(Player target, RecRoomObject referenceObject);
+        Quaternion GetRotationInReferenceObjectSpace(Player target, Player referenceObject);
+
+        // Get Up Vector
+        Vector3 GetUpVector(RecRoomObject target);
+        Vector3 GetUpVector(Player target);
+
+        // Get Velocity
+        Vector3 GetVelocity(RecRoomObject target);
+        Vector3 GetVelocity(Player target);
+
+        // Go To Event
+        void GoToEvent(Player player, object communityEvent);
+
+        // Go To Room
+        void GoToRoom(Player player, DestinationRoom destination);
+
+        // Go To State
+        void GoToState(State state);
+
+        // Grabber Grab Object
+        bool GrabberGrabObjectR2(Grabber target, RecRoomObject @object, bool stealFromPlayer, bool snapToGrabber);
+
+        // Grabber Release
+        RecRoomObject GrabberReleaseR2(Grabber target);
+
+        // Grabber Set Player Can Steal From Grabber
+        void GrabberSetPlayerCanStealFromGrabberR2(Grabber target, bool enabled);
+
+        // Grant Reward
+        bool GrantReward(Player player, Reward reward, AlternativeExec<bool> onAwardComplete);
+
+        // Graph Get Is Active
+        bool GraphGetIsActive();
+
+        // Greater Or Equal
+        bool GreaterOrEqual(int a, int b);
+        bool GreaterOrEqual(float a, float b);
+
+        // Greater Than
+        bool GreaterThan(int a, int b);
+        bool GreaterThan(float a, float b);
+
+        // Ground Vehicle Add Boost Fuel
+        void GroundVehicleAddBoostFuel(GroundVehicle target, int boostAmount);
+
+        // Ground Vehicle Apply Boost
+        void GroundVehicleApplyBoost(GroundVehicle target, AlternativeExec failure);
+
+        // Ground Vehicle Get Boost Fuel
+        int GroundVehicleGetBoostFuel(GroundVehicle target);
+
+        // Ground Vehicle Get Driving Enabled
+        bool GroundVehicleGetDrivingEnabled(GroundVehicle target);
+
+        // Ground Vehicle Get Engine Torque Multiplier
+        float GroundVehicleGetEngineTorqueMultiplier(GroundVehicle target);
+
+        // Ground Vehicle Get Seated Player
+        Player GroundVehicleGetSeatedPlayer(GroundVehicle target, int seatIndex);
+
+        // Ground Vehicle Get Wheel Friction Multiplier
+        float GroundVehicleGetWheelFrictionMultiplier(GroundVehicle target);
+
+        // Ground Vehicle Set Driving Enabled
+        void GroundVehicleSetDrivingEnabled(GroundVehicle target, bool enabled);
+
+        // Ground Vehicle Set Engine Torque Multiplier
+        void GroundVehicleSetEngineTorqueMultiplier(GroundVehicle target, float torqueMultiplier);
+
+        // Ground Vehicle Set Seated Player
+        void GroundVehicleSetSeatedPlayer(GroundVehicle target, int seatIndex, Player player, AlternativeExec failure);
+
+        // Ground Vehicle Set Wheel Friction Multiplier
+        void GroundVehicleSetWheelFrictionMultiplier(GroundVehicle target, float frictionMultiplier);
+
+        // Ground Vehicle Unseat Player
+        void GroundVehicleUnseatPlayer(GroundVehicle target, Player player, AlternativeExec failure);
+
+        // Ground Vehicle Unseat Player From Seat
+        void GroundVehicleUnseatPlayerFromSeat(GroundVehicle target, int seatIndex, AlternativeExec failure);
+
+        // Gun Handle Apply Recoil
+        void GunHandleApplyRecoil(GunHandle target, float angleX, float angleY, float duration, float returnDuration);
+
+        // Gun Handle Get Continuous Fire
+        bool GunHandleGetContinuousFire(GunHandle target);
+
+        // Gun Handle Get Current Ammo
+        int GunHandleGetCurrentAmmo(GunHandle target);
+
+        // Gun Handle Get Firing Direction
+        Vector3 GunHandleGetFiringDirection(GunHandle target, RecRoomObject source);
+
+        // Gun Handle Get Is Reloading
+        bool GunHandleGetIsReloading(GunHandle target);
+
+        // Gun Handle Get Max Ammo
+        int GunHandleGetMaxAmmo(GunHandle target);
+
+        // Gun Handle Get Rate Of Fire
+        float GunHandleGetRateOfFire(GunHandle target);
+
+        // Gun Handle Get Reload Duration
+        float GunHandleGetReloadDuration(GunHandle target);
+
+        // Gun Handle Get Supports Reload
+        bool GunHandleGetSupportsReload(GunHandle target);
+
+        // Gun Handle Set Ads Enabled
+        void GunHandleSetADSEnabled(GunHandle target, bool enabled);
+
+        // Gun Handle Set Continuous Fire
+        void GunHandleSetContinuousFire(GunHandle target, bool continuousFire);
+
+        // Gun Handle Set Current Ammo
+        void GunHandleSetCurrentAmmo(GunHandle target, int ammo);
+
+        // Gun Handle Set Max Ammo
+        void GunHandleSetMaxAmmo(GunHandle target, int maxAmmo);
+
+        // Gun Handle Set Rate Of Fire
+        void GunHandleSetRateOfFire(GunHandle target, float rateOfFire);
+
+        // Gun Handle Set Reload Duration
+        void GunHandleSetReloadDuration(GunHandle target, float reloadDuration);
+
+        // Gun Handle Set Supports Reload
+        void GunHandleSetSupportsReload(GunHandle target, bool canReload);
+
+        // Handle Get Control Prompt
+        string HandleGetControlPrompt(Handle target);
+
+        // Handle Set Control Prompt
+        void HandleSetControlPrompt(Handle target, string controlPrompt);
+
+        // Handle Set Player Filter Tags
+        void HandleSetPlayerFilterTagsR2(Handle target, List<string> value);
+
+        // Has Tag
+        bool HasTag(Player target, string tag);
+        bool HasTag(RecRoomObject target, string tag);
+
+        // Holotar Projector Get Current Time
+        float HolotarProjectorGetCurrentTime(HolotarProjector target);
+
+        // Holotar Projector Get Volume
+        float HolotarProjectorGetVolume(HolotarProjector target);
+
+        // Holotar Projector Pause
+        void HolotarProjectorPause(HolotarProjector target);
+
+        // Holotar Projector Play
+        void HolotarProjectorPlay(HolotarProjector target, HolotarRecording holotar);
+
+        // Holotar Projector Resume
+        void HolotarProjectorResume(HolotarProjector target);
+
+        // Holotar Projector Set Current Time
+        void HolotarProjectorSetCurrentTime(HolotarProjector target, float time);
+
+        // Holotar Projector Set Volume
+        void HolotarProjectorSetVolume(HolotarProjector target, float volume);
+
+        // Holotar Projector Stop
+        void HolotarProjectorStop(HolotarProjector target);
+
+        // Holotar Recording Constant
+        HolotarRecording HolotarRecordingConstant();
+
+        // Holster Object
+        bool HolsterObject(Player player, RecRoomObject objectToHolster, bool forceHolster, bool steal);
+
+        // Hsv To Color
+        Color HSVToColor(float hue, float saturation, float value);
+
+        // If Has Tag
+        void IfHasTag(Player target, string tag, AlternativeExec doesNotHaveTag);
+        void IfHasTag(RecRoomObject target, string tag, AlternativeExec doesNotHaveTag);
+
+        // If Local Player Is Authority
+        void IfLocalPlayerIsAuthority(AlternativeExec imNotAuthority);
+
+        // If Local Player Is Room Authority
+        void IfLocalPlayerIsRoomAuthority(AlternativeExec imNotAuthority);
+
+        // If Local Player Should Run
+        void IfLocalPlayerShouldRun(Player actingPlayer, AlternativeExec shouldNotRun);
+
+        // If Player Has Role
+        void IfPlayerHasRoleR1(Player player, string role, AlternativeExec doesNotHaveRole);
+
+        // If Player Is Local
+        void IfPlayerIsLocal(Player player, AlternativeExec isNotLocal);
+
+        // If Player Is Valid
+        void IfPlayerIsValid(Player player, AlternativeExec isNotValid);
+
+        // If Player Is Valid And Local
+        void IfPlayerIsValidAndLocal(Player player, AlternativeExec isNotValid, AlternativeExec isValidAndNotLocal);
+
+        // In
+        void In();
+
+        // Instance Get Is Event
+        bool InstanceGetIsEvent();
+
+        // Instance Get Is Multi Instance Event
+        bool InstanceGetIsMultiInstanceEvent();
+
+        // Instance Get Is Private
+        bool InstanceGetIsPrivate();
+
+        // Instance Get Lifetime
+        float InstanceGetLifetime();
+
+        // Instance Get Max Players
+        int InstanceGetMaxPlayers();
+
+        // Interaction Volume Get Hold Time
+        float InteractionVolumeGetHoldTime(InteractionVolume target);
+
+        // Interaction Volume Get Interaction Prompt
+        string InteractionVolumeGetInteractionPrompt(InteractionVolume target);
+
+        // Interaction Volume Get Is Locked
+        bool InteractionVolumeGetIsLocked(InteractionVolume target);
+
+        // Interaction Volume Get Normalized Hold Progress
+        float InteractionVolumeGetNormalizedHoldProgress(InteractionVolume target);
+
+        // Interaction Volume Set Hold Time
+        void InteractionVolumeSetHoldTime(InteractionVolume target, float holdTime);
+
+        // Interaction Volume Set Interaction Prompt
+        void InteractionVolumeSetInteractionPrompt(InteractionVolume target, string interactionPrompt);
+
+        // Interaction Volume Set Locked
+        void InteractionVolumeSetLocked(InteractionVolume target, bool locked);
+
+        // Interaction Volume Set Normalized Hold Progress
+        void InteractionVolumeSetNormalizedHoldProgress(InteractionVolume target, float normalizedHoldProgress);
+
+        // Int To Float
+        float IntToFloat(int value);
+
+        // Inventory Item Constant
+        InventoryItem InventoryItemConstantR2();
+
+        // Inventory Item Get Count
+        int InventoryItemGetCountR2(InventoryItem inventoryItem, Player player, AlternativeExec<int> complete);
+
+        // Inventory Item Get Image
+        RecNetImage InventoryItemGetImageR2(InventoryItem inventoryItem);
+
+        // Inventory Item Use
+        void InventoryItemUseR2(InventoryItem inventoryItem);
+
+        // Inverse Lerp
+        float InverseLerp(float start, float end, float value);
+        float InverseLerp(Color start, Color end, Color value);
+        float InverseLerp(Vector3 start, Vector3 end, Vector3 value);
+
+        // Inverse Lerp Unclamped
+        float InverseLerpUnclamped(float start, float end, float value);
+        float InverseLerpUnclamped(Color start, Color end, Color value);
+        float InverseLerpUnclamped(Vector3 start, Vector3 end, Vector3 value);
+
+        // Invisible Collision Get Blocks Players
+        bool InvisibleCollisionGetBlocksPlayers(InvisibleCollision target);
+
+        // Invisible Collision Get Enabled
+        bool InvisibleCollisionGetEnabled(InvisibleCollision target);
+
+        // Invisible Collision Set Blocks Players
+        void InvisibleCollisionSetBlocksPlayers(InvisibleCollision target, bool enabled);
+
+        // Invisible Collision Set Enabled
+        void InvisibleCollisionSetEnabled(InvisibleCollision target, bool enabled);
+
+        // Laser Pointer Get Color
+        Color LaserPointerGetColor(LaserPointer target);
+
+        // Laser Pointer Get Enabled
+        bool LaserPointerGetEnabled(LaserPointer target);
+
+        // Laser Pointer Get Length
+        float LaserPointerGetLength(LaserPointer target);
+
+        // Laser Pointer Set Color
+        void LaserPointerSetColor(LaserPointer target, Color color);
+
+        // Laser Pointer Set Enabled
+        void LaserPointerSetEnabled(LaserPointer target, bool enabled);
+
+        // Laser Pointer Set Length
+        void LaserPointerSetLength(LaserPointer target, float length);
+
+        // Leaderboard Get Player Stat
+        int LeaderboardGetPlayerStat(Player player, int channel, AlternativeExec<int> onGetStatComplete);
+
+        // Leaderboard Get Projector Enabled
+        bool LeaderboardGetProjectorEnabled(LeaderboardProjector target);
+
+        // Leaderboard Set Local Player Stat
+        void LeaderboardSetLocalPlayerStat(int channel, int value);
+
+        // Leaderboard Set Projector Enabled
+        void LeaderboardSetProjectorEnabled(LeaderboardProjector target, bool enabled);
+
+        // Lerp
+        float Lerp(float start, float end, float progress);
+        Quaternion Lerp(Quaternion start, Quaternion end, float progress);
+        Vector3 Lerp(Vector3 start, Vector3 end, float progress);
+        Color Lerp(Color start, Color end, float progress);
+
+        // Lerp Unclamped
+        float LerpUnclamped(float start, float end, float progress);
+        Quaternion LerpUnclamped(Quaternion start, Quaternion end, float progress);
+        Vector3 LerpUnclamped(Vector3 start, Vector3 end, float progress);
+        Color LerpUnclamped(Color start, Color end, float progress);
+
+        // Less Or Equal
+        bool LessOrEqual(int a, int b);
+        bool LessOrEqual(float a, float b);
+
+        // Less Than
+        bool LessThan(int a, int b);
+        bool LessThan(float a, float b);
+
+        // Light Get Angle
+        float LightGetAngle(Light target);
+
+        // Light Get Color
+        Color LightGetColor(Light target);
+
+        // Light Get Enabled
+        bool LightGetEnabled(Light target);
+
+        // Light Get Intensity
+        float LightGetIntensity(Light target);
+
+        // Light Get Range
+        float LightGetRange(Light target);
+
+        // Light Get Softness
+        float LightGetSoftness(Light target);
+
+        // Light Get Specular Contribution
+        float LightGetSpecularContribution(Light target);
+
+        // Light Set Angle
+        void LightSetAngle(Light target, float angle);
+
+        // Light Set Color
+        void LightSetColor(Light target, Color color);
+
+        // Light Set Enabled
+        void LightSetEnabled(Light target, bool enabled);
+
+        // Light Set Intensity
+        void LightSetIntensity(Light target, float intensity);
+
+        // Light Set Range
+        void LightSetRange(Light target, float range);
+
+        // Light Set Softness
+        void LightSetSoftness(Light target, float softness);
+
+        // Light Set Specular Contribution
+        void LightSetSpecularContribution(Light target, float specularContribution);
+
+        // Light Turn Off
+        void LightTurnOff(Light target);
+
+        // Light Turn On
+        void LightTurnOn(Light target);
+
+        // List All True
+        bool ListAllTrue(List<bool> target);
+
+        // List Any True
+        bool ListAnyTrue(List<bool> target);
+
+        // List Divide
+        float ListDivide(List<float> target);
+        int ListDivide(List<int> target);
+        Vector3 ListDivide(List<Vector3> target);
+
+        // List Max
+        float ListMax(List<float> target);
+        int ListMax(List<int> target);
+
+        // List Min
+        float ListMin(List<float> target);
+        int ListMin(List<int> target);
+
+        // List Multiply
+        float ListMultiply(List<float> target);
+        int ListMultiply(List<int> target);
+        Quaternion ListMultiply(List<Quaternion> target);
+        Vector3 ListMultiply(List<Vector3> target);
+
+        // List Sort
+        void ListSort(List<float> target, bool ascending);
+        void ListSort(List<int> target, bool ascending);
+        void ListSort(List<string> target, bool ascending);
+
+        // List Subtract
+        float ListSubtract(List<float> target);
+        int ListSubtract(List<int> target);
+        Vector3 ListSubtract(List<Vector3> target);
+
+        // List Sum
+        float ListSum(List<float> target);
+        int ListSum(List<int> target);
+        Vector3 ListSum(List<Vector3> target);
+
+        // Local Player Clear Player Voice Rolloff Override
+        void LocalPlayerClearPlayerVoiceRolloffOverrideR2(Player player);
+
+        // Local Player Disable Interaction With Target Player
+        void LocalPlayerDisableInteractionWithTargetPlayer(Player player);
+
+        // Local Player Enable Interaction With Target Player
+        void LocalPlayerEnableInteractionWithTargetPlayer(Player player, float requiredHoldDuration, string prompt);
+
+        // Local Player Gaze Direction
+        Vector3 LocalPlayerGazeDirection();
+
+        // Local Player Gaze Origin
+        Vector3 LocalPlayerGazeOrigin();
+
+        // Local Player Get Is Third Person Active
+        bool LocalPlayerGetIsThirdPersonActive();
+
+        // Local Player Get Objective Log Enabled
+        bool LocalPlayerGetObjectiveLogEnabled();
+
+        // Local Player Is Using Controller
+        bool LocalPlayerIsUsingController();
+
+        // Local Player Is Using Keyboard And Mouse
+        bool LocalPlayerIsUsingKeyboardAndMouse();
+
+        // Local Player Is Using Touch
+        bool LocalPlayerIsUsingTouch();
+
+        // Local Player Is VR
+        bool LocalPlayerIsVR();
+
+        // Local Player Override Player Voice Rolloff
+        void LocalPlayerOverridePlayerVoiceRolloffR2(Player player, float voiceRolloffDistance);
+
+        // Local Player Request Third Person
+        void LocalPlayerRequestThirdPerson(bool active);
+
+        // Local Player Set Gravity Disabled
+        void LocalPlayerSetGravityDisabledR2(bool disabled);
+
+        // Local Player Set Locomotion Vfx Enabled
+        void LocalPlayerSetLocomotionVFXEnabledR2(bool sprintWind, bool wallRunWind, bool slideStartWind, bool slideWind, bool slideSparks);
+
+        // Local Player Set Objective Log Content
+        void LocalPlayerSetObjectiveLogContent(string headerText, Color headerTextColor, string bodyText, Color bodyTextColor);
+
+        // Local Player Set Objective Log Enabled
+        void LocalPlayerSetObjectiveLogEnabled(bool enable);
+
+        // Local Player Set Player Nametag Visibility
+        void LocalPlayerSetPlayerNametagVisibility(Player player, bool enabled);
+
+        // Locomotion Request Clamber
+        void LocomotionRequestClamberR2(Vector3 ledgePosition, Vector3 wallNormal, RecRoomObject wallObject, bool mantle, float duration, float postClamberVelocityMultiplier);
+
+        // Locomotion Request Crouch
+        void LocomotionRequestCrouchR2();
+
+        // Locomotion Request Fly Start
+        void LocomotionRequestFlyStartR2();
+
+        // Locomotion Request Fly Stop
+        void LocomotionRequestFlyStopR2();
+
+        // Locomotion Request Jump Cutoff
+        void LocomotionRequestJumpCutoffR2();
+
+        // Locomotion Request Jump
+        void LocomotionRequestJumpR2(float maxJumpHeight, Vector3 direction);
+
+        // Locomotion Request Prone
+        void LocomotionRequestProneR2();
+
+        // Locomotion Request Slide
+        void LocomotionRequestSlideR2(float slideSpeed, float minSlideSpeed, bool slideWithGravity);
+
+        // Locomotion Request Sprint Start
+        void LocomotionRequestSprintStartR2();
+
+        // Locomotion Request Sprint Stop
+        void LocomotionRequestSprintStopR2();
+
+        // Locomotion Request Stand
+        void LocomotionRequestStandR2();
+
+        // Locomotion Request Steering
+        void LocomotionRequestSteeringR2(Vector3 direction, float normalizedSpeed, float maxSteeringSpeed, float accelerationTime);
+
+        // Locomotion Request Wall Climb Start
+        void LocomotionRequestWallClimbStartR2();
+
+        // Locomotion Request Wall Climb Stop
+        void LocomotionRequestWallClimbStopR2();
+
+        // Locomotion Request Wall Run
+        void LocomotionRequestWallRunR2(float gravityMultiplier);
+
+        // Locomotion Request Wall Run Stop
+        void LocomotionRequestWallRunStopR2();
+
+        // Locomotion Set Steering Input Enabled
+        void LocomotionSetSteeringInputEnabled(bool enabled);
+
+        // Logarithm
+        float Logarithm(float value, float @base);
+
+        // Log Error
+        void LogError(string error);
+
+        // Log String
+        void LogString(string text);
+
+        // Max
+        int Max(params int[] value);
+        float Max(params float[] value);
+
+        // Min
+        int Min(params int[] value);
+        float Min(params float[] value);
+
+        // Modulo
+        int Modulo(params int[] value);
+        float Modulo(params float[] value);
+
+        // Multiply
+        int Multiply(params int[] value);
+        float Multiply(params float[] value);
+        Quaternion Multiply(params Quaternion[] value);
+        Vector3 Multiply(params Vector3[] value);
+
+        // Music Constant
+        Audio MusicConstant();
+
+        // Nand
+        bool Nand(bool input);
+
+        // Nav Mesh Can Path Between
+        bool NavMeshCanPathBetween(Vector3 startPosition, Vector3 endPosition, float maxDistance);
+
+        // Noise
+        float Noise(Vector3 point);
+
+        // Nor
+        bool Nor(bool input);
+
+        // Not
+        bool Not(bool value);
+
+        // Objective Marker Attach To Player Or Object
+        void ObjectiveMarkerAttachToPlayerOrObject(ObjectiveMarker target, Player playerOrObject);
+        void ObjectiveMarkerAttachToPlayerOrObject(ObjectiveMarker target, RecRoomObject playerOrObject);
+
+        // Objective Marker Constant
+        ObjectiveMarker ObjectiveMarkerConstant();
+
+        // Objective Marker Get Color
+        Color ObjectiveMarkerGetColor(ObjectiveMarker target);
+
+        // Objective Marker Get Current Distance
+        float ObjectiveMarkerGetCurrentDistance(ObjectiveMarker target);
+
+        // Objective Marker Get Distance Enabled
+        bool ObjectiveMarkerGetDistanceEnabled(ObjectiveMarker target);
+
+        // Objective Marker Get Enabled
+        bool ObjectiveMarkerGetEnabled(ObjectiveMarker target);
+
+        // Objective Marker Get Fade Threshold
+        float ObjectiveMarkerGetFadeThreshold(ObjectiveMarker target);
+
+        // Objective Marker Get Label
+        string ObjectiveMarkerGetLabel(ObjectiveMarker target);
+
+        // Objective Marker Get Label Enabled
+        bool ObjectiveMarkerGetLabelEnabled(ObjectiveMarker target);
+
+        // Objective Marker Get Position
+        Vector3 ObjectiveMarkerGetPosition(ObjectiveMarker target);
+
+        // Objective Marker Get Target Object
+        RecRoomObject ObjectiveMarkerGetTargetObject(ObjectiveMarker target);
+
+        // Objective Marker Get Target Player
+        Player ObjectiveMarkerGetTargetPlayer(ObjectiveMarker target);
+
+        // Objective Marker Set Color
+        void ObjectiveMarkerSetColor(ObjectiveMarker target, Color color);
+
+        // Objective Marker Set Distance Enabled
+        void ObjectiveMarkerSetDistanceEnabled(ObjectiveMarker target, bool enabled);
+
+        // Objective Marker Set Enabled
+        void ObjectiveMarkerSetEnabled(ObjectiveMarker target, bool enabled);
+
+        // Objective Marker Set Fade Threshold
+        void ObjectiveMarkerSetFadeThreshold(ObjectiveMarker target, float proximity);
+
+        // Objective Marker Set Label
+        void ObjectiveMarkerSetLabel(ObjectiveMarker target, string label);
+
+        // Objective Marker Set Label Enabled
+        void ObjectiveMarkerSetLabelEnabled(ObjectiveMarker target, bool enabled);
+
+        // Objective Marker Set Position
+        void ObjectiveMarkerSetPosition(ObjectiveMarker target, Vector3 position);
+
+        // Or
+        bool Or(params bool[] input);
+
+        // Out
+        void Out();
+
+        // Pathfinder Get Enable Ground Clamping
+        bool PathfinderGetEnableGroundClampingR2(Pathfinder pathfinder);
+
+        // Pathfinder Get Max Acceleration
+        float PathfinderGetMaxAccelerationR2(Pathfinder pathfinder);
+
+        // Pathfinder Get Max Angular Speed
+        float PathfinderGetMaxAngularSpeedR2(Pathfinder pathfinder);
+
+        // Pathfinder Get Max Linear Speed
+        float PathfinderGetMaxLinearSpeedR2(Pathfinder pathfinder);
+
+        // Pathfinder Set Ground Clamping
+        void PathfinderSetGroundClampingR2(Pathfinder pathfinder, bool enable);
+
+        // Pathfinder Set Max Acceleration
+        void PathfinderSetMaxAccelerationR2(Pathfinder pathfinder, float maxAcceleration);
+
+        // Pathfinder Set Max Angular Speed
+        void PathfinderSetMaxAngularSpeedR2(Pathfinder pathfinder, float maxAngularSpeed);
+
+        // Pathfinder Set Max Linear Speed
+        void PathfinderSetMaxLinearSpeedR2(Pathfinder pathfinder, float maxLinearSpeed);
+
+        // Pathfinder Set Tags To Ignore
+        void PathfinderSetTagsToIgnoreR2(Pathfinder pathfinder, List<string> tagsToIgnore);
+
+        // Pathfinder Start Pathing To Position
+        void PathfinderStartPathingToPositionR2(Pathfinder pathfinder, Vector3 targetPosition, float slowdownDistance, float arrivalDistance);
+
+        // Pathfinder Start Rotating To Direction
+        void PathfinderStartRotatingToDirectionR2(Pathfinder pathfinder, Vector3 targetDirection, float slowdownAngle, float arrivalAngle);
+
+        // Pathfinder Stop Pathing
+        void PathfinderStopPathingR2(Pathfinder pathfinder);
+
+        // Pathfinder Stop Rotating
+        void PathfinderStopRotatingR2(Pathfinder pathfinder);
+
+        // Piston Get Acceleration
+        float PistonGetAcceleration(Piston target);
+
+        // Piston Get Distance
+        float PistonGetDistance(Piston target);
+
+        // Piston Get Max Distance
+        float PistonGetMaxDistance(Piston target);
+
+        // Piston Get Speed
+        float PistonGetSpeed(Piston target);
+
+        // Piston Get Target Distance
+        float PistonGetTargetDistance(Piston target);
+
+        // Piston Set Acceleration
+        void PistonSetAcceleration(Piston target, float value);
+
+        // Piston Set Distance
+        void PistonSetDistance(Piston target, float value);
+
+        // Piston Set Max Distance
+        void PistonSetMaxDistance(Piston target, float value);
+
+        // Piston Set Speed
+        void PistonSetSpeed(Piston target, float value);
+
+        // Piston Set Target Distance
+        void PistonSetTargetDistance(Piston target, float value);
+
+        // Play Audio At Position
+        void PlayAudioAtPosition(Audio audio, Vector3 position, float volume, float playbackSpeed, bool is2D, PlayAudioAtPositionData config);
+
+        // Player Add Aim Assist Tag
+        void PlayerAddAimAssistTag(Player player, string tag);
+
+        // Player Add Role
+        void PlayerAddRoleR1(Player target, string value);
+
+        // Player Award Xp
+        bool PlayerAwardXP(Player player, int amount, AlternativeExec<bool> onAwardComplete);
+
+        // Player Body Orientation
+        Quaternion PlayerBodyOrientation(Player target);
+
+        // Player Body Position
+        Vector3 PlayerBodyPosition(Player target);
+
+        // Player Clear Current Subtitle
+        void PlayerClearCurrentSubtitle(Player player);
+
+        // Player Definition Board Empty
+        void PlayerDefinitionBoardEmpty();
+
+        // Player Equip Inventory Item
+        bool PlayerEquipInventoryItemR2(Player player, InventoryItem inventoryItem, EquipmentSlot inventoryEquipmentSlot, AlternativeExec<bool> onEquipComplete);
+
+        // Player Get Air Control Percentage
+        float PlayerGetAirControlPercentageR2(Player player);
+
+        // Player Get Can Fly
+        bool PlayerGetCanFlyR2(Player player);
+
+        // Player Get Can Teleport
+        bool PlayerGetCanTeleportR2(Player player);
+
+        // Player Get Can Wall Climb
+        bool PlayerGetCanWallClimbR2(Player player);
+
+        // Player Get Costume
+        Costume PlayerGetCostume(Player player);
+
+        // Player Get Crouch Input Enabled
+        bool PlayerGetCrouchInputEnabledR2(Player player);
+
+        // Player Get Crouch Speed
+        float PlayerGetCrouchSpeedR2(Player player);
+
+        // Player Get Dominant Hand Is Right
+        bool PlayerGetDominantHandIsRight(Player player);
+
+        // Player Get Equipment Slot Is Enabled
+        bool PlayerGetEquipmentSlotIsEnabledR2(Player player, EquipmentSlot equipmentSlot);
+
+        // Player Get First With Tag
+        Player PlayerGetFirstWithTag(string tag);
+
+        // Player Get Force Manual Sprint
+        bool PlayerGetForceManualSprintR2(Player player);
+
+        // Player Get Force Virtual Height Mode
+        bool PlayerGetForceVirtualHeightModeR2(Player player);
+
+        // Player Get Force VR Walk
+        bool PlayerGetForceVRWalkR2(Player player);
+
+        // Player Get Is Authority Of
+        bool PlayerGetIsAuthorityOf(Player target, RecRoomObject @object);
+
+        // Player Get Is Clambering
+        bool PlayerGetIsClambering(Player player);
+
+        // Player Get Is Crouching
+        bool PlayerGetIsCrouching(Player player);
+
+        // Player Get Is Custom Footstep Audio Active
+        bool PlayerGetIsCustomFootstepAudioActive(Player player);
+
+        // Player Get Is Flying
+        bool PlayerGetIsFlying(Player player);
+
+        // Player Get Is Local
+        bool PlayerGetIsLocal(Player target);
+
+        // Player Get Is Prone
+        bool PlayerGetIsProne(Player player);
+
+        // Player Get Is Room Contributor
+        bool PlayerGetIsRoomContributor(Player target);
+
+        // Player Get Is Room Host
+        bool PlayerGetIsRoomHost(Player target);
+
+        // Player Get Is Room Mod
+        bool PlayerGetIsRoomMod(Player target);
+
+        // Player Get Is Room Owner
+        bool PlayerGetIsRoomOwner(Player target);
+
+        // Player Get Is Sliding
+        bool PlayerGetIsSliding(Player player);
+
+        // Player Get Is Sprinting
+        bool PlayerGetIsSprinting(Player player);
+
+        // Player Get Is Wall Climbing
+        bool PlayerGetIsWallClimbing(Player player);
+
+        // Player Get Is Wall Running
+        bool PlayerGetIsWallRunning(Player player);
+
+        // Player Get Jump Height
+        float PlayerGetJumpHeightR2(Player player);
+
+        // Player Get Jump Input Enabled
+        bool PlayerGetJumpInputEnabledR2(Player player);
+
+        // Player Get Physics Velocity
+        Vector3 PlayerGetPhysicsVelocityR2(Player player);
+
+        // Player Get Profile Image
+        RecNetImage PlayerGetProfileImage(Player player);
+
+        // Player Get Prone Speed
+        float PlayerGetProneSpeedR2(Player player);
+
+        // Player Get Radio Channel
+        int PlayerGetRadioChannel(Player player);
+
+        // Player Get Room Index
+        int PlayerGetRoomIndex(Player player);
+
+        // Player Get Room Level
+        int PlayerGetRoomLevel(Player player);
+
+        // Player Get Seat
+        Seat PlayerGetSeat(Player player);
+
+        // Player Get Slide Speed
+        float PlayerGetSlideSpeedR2(Player player);
+
+        // Player Get Sprint Input Enabled
+        bool PlayerGetSprintInputEnabledR2(Player player);
+
+        // Player Get Sprint Speed
+        float PlayerGetSprintSpeedR2(Player player);
+
+        // Player Get Steering Direction
+        Vector3 PlayerGetSteeringDirection(Player player);
+
+        // Player Get Steering Input Enabled
+        bool PlayerGetSteeringInputEnabled(Player player);
+
+        // Player Get Steering Speed
+        float PlayerGetSteeringSpeed(Player player);
+
+        // Player Get Teleport Delay
+        float PlayerGetTeleportDelayR2(Player player);
+
+        // Player Get Teleport Distance
+        float PlayerGetTeleportDistanceR2(Player player);
+
+        // Player Get Time Zone
+        int PlayerGetTimeZone(Player player);
+
+        // Player Get Volume
+        float PlayerGetVolume(Player player);
+
+        // Player Get Walk Speed
+        float PlayerGetWalkSpeedR2(Player player);
+
+        // Player Get Wall Run Enabled
+        bool PlayerGetWallRunEnabledR2(Player player);
+
+        // Player Get Xp
+        int PlayerGetXP(Player player);
+
+        // Player Has Purchased Room Offer
+        bool PlayerHasPurchasedRoomOfferR2(Player player, RoomOffer roomOffer, AlternativeExec<bool> onPlayerHasPurchasedRoomOfferComplete);
+
+        // Player Has Role
+        bool PlayerHasRoleR1(Player target, string value);
+
+        // Player Head Forward Vector
+        Vector3 PlayerHeadForwardVector(Player target);
+
+        // Player Head Height
+        float PlayerHeadHeight(Player target);
+
+        // Player Head Orientation
+        Quaternion PlayerHeadOrientation(Player target);
+
+        // Player Head Position
+        Vector3 PlayerHeadPosition(Player target);
+
+        // Player Head Up Vector
+        Vector3 PlayerHeadUpVector(Player target);
+
+        // Player Head Velocity
+        Vector3 PlayerHeadVelocity(Player target);
+
+        // Player Is Holding Maker Pen
+        bool PlayerIsHoldingMakerPen(Player target);
+
+        // Player Is In Party
+        bool PlayerIsInParty(Player target);
+
+        // Player Left Hand Finger Direction
+        Vector3 PlayerLeftHandFingerDirection(Player target);
+
+        // Player Left Hand Position
+        Vector3 PlayerLeftHandPosition(Player target);
+
+        // Player Left Hand Rotation
+        Quaternion PlayerLeftHandRotation(Player target);
+
+        // Player Left Hand Thumb Direction
+        Vector3 PlayerLeftHandThumbDirection(Player target);
+
+        // Player Left Hand Velocity
+        Vector3 PlayerLeftHandVelocity(Player target);
+
+        // Player Owns Inventory Item
+        bool PlayerOwnsInventoryItemR2(Player player, InventoryItem inventoryItem, AlternativeExec<bool> complete);
+
+        // Player Owns Room Key
+        bool PlayerOwnsRoomKeyR1(Player player, RoomKey roomKey, AlternativeExec<bool> onPlayerOwnsRoomKeyComplete);
+
+        // Player Remove Aim Assist Tag
+        void PlayerRemoveAimAssistTag(Player player, string tag);
+
+        // Player Remove Role
+        void PlayerRemoveRoleR1(Player target, string value);
+
+        // Player Reset Name Color
+        void PlayerResetNameColor(Player player);
+
+        // Player Right Hand Finger Direction
+        Vector3 PlayerRightHandFingerDirection(Player target);
+
+        // Player Right Hand Position
+        Vector3 PlayerRightHandPosition(Player target);
+
+        // Player Right Hand Rotation
+        Quaternion PlayerRightHandRotation(Player target);
+
+        // Player Right Hand Thumb Direction
+        Vector3 PlayerRightHandThumbDirection(Player target);
+
+        // Player Right Hand Velocity
+        Vector3 PlayerRightHandVelocity(Player target);
+
+        // Player Set Aim Assist Tags
+        void PlayerSetAimAssistTags(Player player, List<string> tags);
+
+        // Player Set Air Control Percentage
+        void PlayerSetAirControlPercentageR2(Player player, float airControlPercentage);
+
+        // Player Set Can Fly
+        void PlayerSetCanFlyR2(Player player, bool canFly);
+
+        // Player Set Can Teleport
+        void PlayerSetCanTeleportR2(Player player, bool canTeleport);
+
+        // Player Set Can Wall Climb
+        void PlayerSetCanWallClimbR2(Player player, bool wallClimbEnabled);
+
+        // Player Set Crouch Input Enabled
+        void PlayerSetCrouchInputEnabledR2(Player player, bool crouchInputEnabled);
+
+        // Player Set Crouch Speed
+        void PlayerSetCrouchSpeedR2(Player player, float crouchSpeed);
+
+        // Player Set Equipment Slot Is Enabled
+        void PlayerSetEquipmentSlotIsEnabledR2(Player player, EquipmentSlot equipmentSlot, bool isEnabled);
+
+        // Player Set Force Manual Sprint
+        void PlayerSetForceManualSprintR2(Player player, bool forceManualSprint);
+
+        // Player Set Force Virtual Height Mode
+        void PlayerSetForceVirtualHeightModeR2(Player player, bool forceVirtualHeightMode);
+
+        // Player Set Force VR Walk
+        void PlayerSetForceVRWalkR2(Player player, bool forceVRWalk);
+
+        // Player Set Jump Height
+        void PlayerSetJumpHeightR2(Player player, float jumpHeight);
+
+        // Player Set Jump Input Enabled
+        void PlayerSetJumpInputEnabledR2(Player player, bool jumpInputEnabled);
+
+        // Player Set Name Color
+        void PlayerSetNameColor(Player player, Color color);
+
+        // Player Set Physics Velocity
+        void PlayerSetPhysicsVelocityR2(Player player, Vector3 physicsVelocity);
+
+        // Player Set Prone Speed
+        void PlayerSetProneSpeedR2(Player player, float proneSpeed);
+
+        // Player Set Radio Channel
+        void PlayerSetRadioChannel(Player player, int channel);
+
+        // Player Set Slide Speed
+        void PlayerSetSlideSpeedR2(Player player, float slideSpeed);
+
+        // Player Set Sprint Input Enabled
+        void PlayerSetSprintInputEnabledR2(Player player, bool sprintInputEnabled);
+
+        // Player Set Sprint Speed
+        void PlayerSetSprintSpeedR2(Player player, float sprintSpeed);
+
+        // Player Set Steering Input Enabled
+        void PlayerSetSteeringInputEnabledR2(Player player, bool steeringInputEnabled);
+
+        // Player Set Steering Velocity
+        void PlayerSetSteeringVelocityR2(Player player, Vector3 steeringVelocity);
+
+        // Player Set Teleport Delay
+        void PlayerSetTeleportDelayR2(Player player, float teleportDelay);
+
+        // Player Set Teleport Distance
+        void PlayerSetTeleportDistanceR2(Player player, float teleportDistance);
+
+        // Player Set Voice Rolloff Distance
+        void PlayerSetVoiceRolloffDistanceR2(Player player, float voiceRolloffDistance);
+
+        // Player Set Walk Speed
+        void PlayerSetWalkSpeedR2(Player player, float walkSpeed);
+
+        // Player Set Wall Run Enabled
+        void PlayerSetWallRunEnabledR2(Player player, bool wallRunEnabled);
+
+        // Player Show Subtitle
+        void PlayerShowSubtitle(Player player, string subtitle, float duration, int priority);
+
+        // Player Unequip From Slot
+        bool PlayerUnequipFromSlotR2(Player player, EquipmentSlot equipmentSlot, AlternativeExec<bool> onUnequipComplete);
+
+        // Player Unequip Inventory Item
+        bool PlayerUnequipInventoryItemR2(Player player, InventoryItem inventoryItem, AlternativeExec<bool> onUnequipComplete);
+
+        // Player World UI
+        PlayerWorldUI PlayerWorldUI(PlayerWorldUIData config);
+
+        // Play Handle Haptics
+        void PlayHandleHaptics(Handle handle, int duration, float intensity);
+
+        // Print Text To Screen
+        void PrintTextToScreen(TextScreen target, string text, Color color);
+
+        // Projectile Launcher Fire Projectile
+        void ProjectileLauncherFireProjectile(ProjectileLauncher target, Vector3 direction);
+
+        // Projectile Launcher Get Firing Player
+        Player ProjectileLauncherGetFiringPlayer(ProjectileLauncher target);
+
+        // Projectile Launcher Get Projectile Count
+        int ProjectileLauncherGetProjectileCount(ProjectileLauncher target);
+
+        // Projectile Launcher Get Projectile Lifetime
+        float ProjectileLauncherGetProjectileLifetime(ProjectileLauncher target);
+
+        // Projectile Launcher Get Projectile Speed
+        float ProjectileLauncherGetProjectileSpeed(ProjectileLauncher target);
+
+        // Projectile Launcher Get Projectile Spread
+        float ProjectileLauncherGetProjectileSpread(ProjectileLauncher target);
+
+        // Projectile Launcher Set Firing Player
+        void ProjectileLauncherSetFiringPlayer(ProjectileLauncher target, Player player);
+
+        // Projectile Launcher Set Projectile Count
+        void ProjectileLauncherSetProjectileCount(ProjectileLauncher target, int count);
+
+        // Projectile Launcher Set Projectile Lifetime
+        void ProjectileLauncherSetProjectileLifetime(ProjectileLauncher target, float lifetime);
+
+        // Projectile Launcher Set Projectile Speed
+        void ProjectileLauncherSetProjectileSpeed(ProjectileLauncher target, float speed);
+
+        // Projectile Launcher Set Projectile Spread
+        void ProjectileLauncherSetProjectileSpread(ProjectileLauncher target, float spread);
+
+        // Prompt Local Player
+        string PromptLocalPlayer(string promptTitle, string prompt, AlternativeExec<string> complete, AlternativeExec<string> failed);
+
+        // Quaternion Create
+        Quaternion QuaternionCreate(float x, float y, float z, float w);
+
+        // Quaternion Create Angle Axis
+        Quaternion QuaternionCreateAngleAxis(float angle, Vector3 axis);
+
+        // Quaternion Create Euler Angles
+        Quaternion QuaternionCreateEulerAngles(Vector3 angles);
+
+        // Quaternion Create From To
+        Quaternion QuaternionCreateFromTo(Vector3 from, Vector3 to);
+
+        // Quaternion Create Look
+        Quaternion QuaternionCreateLook(Vector3 forward, Vector3 upwards);
+
+        // Quaternion Dot
+        float QuaternionDot(Quaternion lhs, Quaternion rhs);
+
+        // Quaternion Euler Angles
+        Vector3 QuaternionEulerAngles(Quaternion value);
+
+        // Quaternion Inverse
+        Quaternion QuaternionInverse(Quaternion value);
+
+        // Quaternion Normalize
+        Quaternion QuaternionNormalize(Quaternion value);
+
+        // Quaternion Rotate Towards
+        Quaternion QuaternionRotateTowards(Quaternion from, Quaternion to, float maxDegreesDelta);
+
+        // Quick Chat Table
+        QuickChatTable QuickChatTable();
+
+        // Quick Chat Table Set Enabled
+        void QuickChatTableSetEnabled(QuickChatTable target, Player player, bool enabled);
+
+        // Random Float
+        float RandomFloat(float min, float max);
+
+        // Random Int
+        int RandomInt(int min, int max);
+
+        // Ranged Weapon Get Color
+        Color RangedWeaponGetColor(RangedWeapon target);
+
+        // Ranged Weapon Get Head Damage
+        int RangedWeaponGetHeadDamage(RangedWeapon target);
+
+        // Ranged Weapon Get Limb Damage
+        int RangedWeaponGetLimbDamage(RangedWeapon target);
+
+        // Ranged Weapon Get Projectile Color
+        Color RangedWeaponGetProjectileColor(RangedWeapon target);
+
+        // Ranged Weapon Get Rec Room Object Damage
+        int RangedWeaponGetRecRoomObjectDamage(RangedWeapon target);
+
+        // Ranged Weapon Get Torso Damage
+        int RangedWeaponGetTorsoDamage(RangedWeapon target);
+
+        // Ranged Weapon Set Color
+        void RangedWeaponSetColor(RangedWeapon target, Color color);
+
+        // Ranged Weapon Set Head Damage
+        void RangedWeaponSetHeadDamage(RangedWeapon target, int damage);
+
+        // Ranged Weapon Set Limb Damage
+        void RangedWeaponSetLimbDamage(RangedWeapon target, int damage);
+
+        // Ranged Weapon Set Projectile Color
+        void RangedWeaponSetProjectileColor(RangedWeapon target, Color color);
+
+        // Ranged Weapon Set Rec Room Object Damage
+        void RangedWeaponSetRecRoomObjectDamage(RangedWeapon target, int damage);
+
+        // Ranged Weapon Set Torso Damage
+        void RangedWeaponSetTorsoDamage(RangedWeapon target, int damage);
+
+        // Recalculate Room Authority
+        bool RecalculateRoomAuthority();
+
+        // Rec Room Object Get Authority
+        Player RecRoomObjectGetAuthority(RecRoomObject target);
+
+        // Rec Room Object Get First With Tag
+        RecRoomObject RecRoomObjectGetFirstWithTag(string tag);
+
+        // Rec Room Object Get Is Local Player Authority
+        bool RecRoomObjectGetIsLocalPlayerAuthority(RecRoomObject target);
+
+        // Rec Room Object Get Root Object
+        RecRoomObject RecRoomObjectGetRootObject(RecRoomObject targetObject);
+
+        // Rec Room Object Reset
+        void RecRoomObjectReset(RecRoomObject @object);
+
+        // Rec Room Object Set Authority
+        void RecRoomObjectSetAuthority(RecRoomObject target, Player authority);
+
+        // Remainder
+        int Remainder(params int[] value);
+        float Remainder(params float[] value);
+
+        // Remove Player From Radio Channel
+        void RemovePlayerFromRadioChannel(Player player);
+
+        // Remove Tag
+        void RemoveTag(Player target, string tag);
+        void RemoveTag(RecRoomObject target, string tag);
+
+        // Remove Tags
+        void RemoveTags(Player target, List<string> tags);
+        void RemoveTags(RecRoomObject target, List<string> tags);
+
+        // Replicator Get Active Objects Count
+        int ReplicatorGetActiveObjectsCountR2(Replicator target);
+
+        // Replicator Return Object
+        void ReplicatorReturnObjectR2(RecRoomObject target);
+
+        // Request Velocity Set Over Duration
+        void RequestVelocitySetOverDuration(Player @object, float multiplier, Vector3 velocity, float duration);
+        void RequestVelocitySetOverDuration(RecRoomObject @object, float multiplier, Vector3 velocity, float duration);
+
+        // Reset Player World UI
+        void ResetPlayerWorldUI(Player player);
+
+        // Reset Room
+        void ResetRoom();
+
+        // Respawn
+        bool Respawn(Player target, Vector3 position, Vector3 rotation, float spawnRadius, bool clearVelocity, bool useRezEffects);
+        bool Respawn(Player target, Vector3 position, Quaternion rotation, float spawnRadius, bool clearVelocity, bool useRezEffects);
+        bool Respawn(RecRoomObject target, Vector3 position, Vector3 rotation, float spawnRadius, bool clearVelocity, bool useRezEffects);
+        bool Respawn(RecRoomObject target, Vector3 position, Quaternion rotation, float spawnRadius, bool clearVelocity, bool useRezEffects);
+
+        // Respawn Point Add Avoid Role
+        bool RespawnPointAddAvoidRoleR1(PlayerSpawnPointV2 spawnPoint, string role);
+
+        // Respawn Point Add Avoid Tag
+        void RespawnPointAddAvoidTag(PlayerSpawnPointV2 spawnPoint, string tag);
+
+        // Respawn Point Add Spawn Role
+        bool RespawnPointAddSpawnRoleR1(PlayerSpawnPointV2 spawnPoint, string role);
+
+        // Respawn Point Add Spawn Tag
+        void RespawnPointAddSpawnTag(PlayerSpawnPointV2 spawnPoint, string tag);
+
+        // Respawn Point Get Active
+        bool RespawnPointGetActive(PlayerSpawnPointV2 target);
+
+        // Respawn Point Remove Avoid Role
+        void RespawnPointRemoveAvoidRoleR1(PlayerSpawnPointV2 spawnPoint, string role);
+
+        // Respawn Point Remove Avoid Tag
+        void RespawnPointRemoveAvoidTag(PlayerSpawnPointV2 spawnPoint, string tag);
+
+        // Respawn Point Remove Spawn Role
+        void RespawnPointRemoveSpawnRoleR1(PlayerSpawnPointV2 spawnPoint, string role);
+
+        // Respawn Point Remove Spawn Tag
+        void RespawnPointRemoveSpawnTag(PlayerSpawnPointV2 spawnPoint, string tag);
+
+        // Respawn Point Respawn Player
+        void RespawnPointRespawnPlayer(Player player, bool clearVelocity, bool useRezEffects);
+
+        // Respawn Point Respawn Player At Respawn Point
+        void RespawnPointRespawnPlayerAtRespawnPoint(PlayerSpawnPointV2 spawnPoint, Player player, bool clearVelocity, bool useRezEffects);
+
+        // Respawn Point Set Active
+        void RespawnPointSetActive(PlayerSpawnPointV2 target, bool active);
+
+        // Reward
+        Reward Reward();
+
+        // Rgb To Color
+        Color RGBToColor(float red, float green, float blue);
+
+        // Room Background Objects Clear Player Override
+        void RoomBackgroundObjectsClearPlayerOverrideR2(Player player, float blendTime, AlternativeExec blendFinished);
+
+        // Room Background Objects Modify
+        bool RoomBackgroundObjectsModifyR1(BackgroundObjects backgroundObjectsConstant, AlternativeExec<bool> blendFinished);
+
+        // Room Background Objects Modify
+        void RoomBackgroundObjectsModifyR2(BackgroundObjects backgroundObjects, float blendTime, AlternativeExec blendFinished);
+
+        // Room Background Objects Player Override
+        void RoomBackgroundObjectsPlayerOverrideR2(BackgroundObjects backgroundObjects, Player player, float blendTime, AlternativeExec blendFinished);
+
+        // Room Background Objects Reset
+        void RoomBackgroundObjectsResetR1(AlternativeExec blendFinished);
+
+        // Room Background Objects Reset
+        void RoomBackgroundObjectsResetR2(float blendTime, AlternativeExec blendFinished);
+
+        // Room Currency Constant
+        RoomCurrency RoomCurrencyConstantR1(RoomCurrencyData config);
+
+        // Room Fog Clear Player Override
+        void RoomFogClearPlayerOverrideR2(Player player, float blendTime, AlternativeExec blendFinished);
+
+        // Room Fog Modify
+        bool RoomFogModifyR1(Fog fogConstant, AlternativeExec<bool> blendFinished);
+
+        // Room Fog Modify
+        void RoomFogModifyR2(Fog fog, float blendTime, AlternativeExec blendFinished);
+
+        // Room Fog Player Override
+        void RoomFogPlayerOverrideR2(Fog fog, Player player, float blendTime, AlternativeExec blendFinished);
+
+        // Room Fog Reset
+        void RoomFogResetR1(AlternativeExec blendFinished);
+
+        // Room Fog Reset
+        void RoomFogResetR2(float blendTime, AlternativeExec blendFinished);
+
+        // Room Get Matchmaking State
+        bool RoomGetMatchmakingState();
+
+        // Room Index Get Player
+        Player RoomIndexGetPlayer(int roomIndex);
+
+        // Room Key Constant
+        RoomKey RoomKeyConstantR1(RoomKeyData config);
+
+        // Room Level HUD
+        RoomLevelHUD RoomLevelHUD();
+
+        // Room Levels
+        void RoomLevels(object levels);
+
+        // Room Offer Constant
+        RoomOffer RoomOfferConstantR2();
+
+        // Room Set Matchmaking State
+        bool RoomSetMatchmakingState(bool matchmakingPermitted, AlternativeExec<bool> onMatchmakingStateSet);
+
+        // Room Skydome Clear Player Override
+        void RoomSkydomeClearPlayerOverrideR2(Player player, float blendTime, AlternativeExec blendFinished);
+
+        // Room Skydome Modify
+        bool RoomSkydomeModifyR1(Skydome skydomeConstant, AlternativeExec<bool> blendFinished);
+
+        // Room Skydome Modify
+        void RoomSkydomeModifyR2(Skydome skydome, float blendTime, AlternativeExec blendFinished);
+
+        // Room Skydome Player Override
+        void RoomSkydomePlayerOverrideR2(Skydome skydome, Player player, float blendTime, AlternativeExec blendFinished);
+
+        // Room Skydome Reset
+        void RoomSkydomeResetR1(AlternativeExec blendFinished);
+
+        // Room Skydome Reset
+        void RoomSkydomeResetR2(float blendTime, AlternativeExec blendFinished);
+
+        // Room Sun Clear Player Override
+        void RoomSunClearPlayerOverrideR2(Player player, float blendTime, AlternativeExec blendFinished);
+
+        // Room Sun Modify
+        bool RoomSunModifyR1(Sun sunConstant, SunDirection sunDirection, AlternativeExec<bool> blendFinished);
+
+        // Room Sun Modify
+        void RoomSunModifyR2(Sun sun, SunDirection sunDirection, float blendTime, AlternativeExec blendFinished);
+
+        // Room Sun Player Override
+        void RoomSunPlayerOverrideR2(Sun sun, SunDirection sunDirection, Player player, float blendTime, AlternativeExec blendFinished);
+
+        // Room Sun Reset
+        void RoomSunResetR1(AlternativeExec blendFinished);
+
+        // Room Sun Reset
+        void RoomSunResetR2(float blendTime, AlternativeExec blendFinished);
+
+        // Root
+        float Root(float value, float root);
+
+        // Root Object
+        RecRoomObject RootObject();
+
+        // Root Player
+        Player RootPlayer();
+
+        // Rotate Vector
+        Vector3 RotateVector(Quaternion rotation, Vector3 point);
+
+        // Rotator Get Rotation
+        float RotatorGetRotation(Rotator target);
+
+        // Rotator Get Rotation Acceleration
+        float RotatorGetRotationAcceleration(Rotator target);
+
+        // Rotator Get Rotation Speed
+        float RotatorGetRotationSpeed(Rotator target);
+
+        // Rotator Get Target Rotation
+        float RotatorGetTargetRotation(Rotator target);
+
+        // Rotator Set Rotation
+        void RotatorSetRotation(Rotator target, float value);
+
+        // Rotator Set Rotation Acceleration
+        void RotatorSetRotationAcceleration(Rotator target, float value);
+
+        // Rotator Set Rotation Speed
+        void RotatorSetRotationSpeed(Rotator target, float value);
+
+        // Rotator Set Target Rotation
+        void RotatorSetTargetRotation(Rotator target, float value);
+
+        // Round
+        float Round(float value);
+
+        // Round To Int
+        int RoundToInt(float value);
+
+        // Sample Audio Constant
+        Audio SampleAudioConstant();
+
+        // Seat Get Lock Players In
+        bool SeatGetLockPlayersIn(Seat target);
+
+        // Seat Get Lock Players Out
+        bool SeatGetLockPlayersOut(Seat target);
+
+        // Seat Get Seated Player
+        Player SeatGetSeatedPlayer(Seat target);
+
+        // Seat Set Lock Players In
+        void SeatSetLockPlayersIn(Seat target, bool lockPlayersIn);
+
+        // Seat Set Lock Players Out
+        void SeatSetLockPlayersOut(Seat target, bool lockPlayersOut);
+
+        // Seat Set Seated Player
+        void SeatSetSeatedPlayer(Seat target, Player player, AlternativeExec fail);
+
+        // Seat Unseat Player
+        void SeatUnseatPlayer(Seat target);
+
+        // Set Camera Shake
+        void SetCameraShake(Player player, float intensity, float duration);
+
+        // Set HUD Element Color
+        void SetHUDElementColor(HUDConstant target, Color color);
+
+        // Set HUD Element Content
+        void SetHUDElementContent(HUDConstant target);
+
+        // Set HUD Element Enabled
+        void SetHUDElementEnabled(HUDConstant target, bool enabled);
+
+        // Set HUD Element Label
+        void SetHUDElementLabel(HUDConstant target, string label);
+
+        // Set HUD Element Label Enabled
+        void SetHUDElementLabelEnabled(HUDConstant target, bool enabled);
+
+        // Set HUD Element Max Value
+        void SetHUDElementMaxValue(HUDConstant target, int value);
+
+        // Set HUD Element Value
+        void SetHUDElementValue(HUDConstant target, int value);
+
+        // Set HUD Element Value Text Enabled
+        void SetHUDElementValueTextEnabled(HUDConstant target, bool enabled);
+
+        // Set Player Vignette
+        void SetPlayerVignette(Player player, float time, Color color, float intensity);
+
+        // Set Player World UI Primary Bar Color
+        void SetPlayerWorldUIPrimaryBarColor(Player player, Color color);
+
+        // Set Player World UI Primary Bar Enabled
+        void SetPlayerWorldUIPrimaryBarEnabled(Player player, bool enabled);
+
+        // Set Player World UI Primary Bar Max Value
+        void SetPlayerWorldUIPrimaryBarMaxValue(Player player, int value);
+
+        // Set Player World UI Primary Bar Value
+        void SetPlayerWorldUIPrimaryBarValue(Player player, int value);
+
+        // Set Player World UI Secondary Bar Color
+        void SetPlayerWorldUISecondaryBarColor(Player player, Color color);
+
+        // Set Player World UI Secondary Bar Enabled
+        void SetPlayerWorldUISecondaryBarEnabled(Player player, bool enabled);
+
+        // Set Player World UI Secondary Bar Max Value
+        void SetPlayerWorldUISecondaryBarMaxValue(Player player, int value);
+
+        // Set Player World UI Secondary Bar Value
+        void SetPlayerWorldUISecondaryBarValue(Player player, int value);
+
+        // Set Player World UI Text Color
+        void SetPlayerWorldUITextColor(Player player, Color color);
+
+        // Set Player World UI Text Enabled
+        void SetPlayerWorldUITextEnabled(Player player, bool enabled);
+
+        // Set Player World UI Text Value
+        void SetPlayerWorldUITextValue(Player player, string value);
+
+        // Set Position
+        bool SetPosition(Player target, Vector3 position);
+        bool SetPosition(RecRoomObject target, Vector3 position);
+
+        // Set Position In Reference Object Space
+        bool SetPositionInReferenceObjectSpace(Player target, Vector3 position, Player referenceObject);
+        bool SetPositionInReferenceObjectSpace(Player target, Vector3 position, RecRoomObject referenceObject);
+        bool SetPositionInReferenceObjectSpace(RecRoomObject target, Vector3 position, Player referenceObject);
+        bool SetPositionInReferenceObjectSpace(RecRoomObject target, Vector3 position, RecRoomObject referenceObject);
+
+        // Set Rotation
+        bool SetRotation(Player target, Vector3 rotation);
+        bool SetRotation(Player target, Quaternion rotation);
+        bool SetRotation(RecRoomObject target, Vector3 rotation);
+        bool SetRotation(RecRoomObject target, Quaternion rotation);
+
+        // Set Rotation In Reference Object Space
+        bool SetRotationInReferenceObjectSpace(Player target, Vector3 rotation, Player referenceObject);
+        bool SetRotationInReferenceObjectSpace(Player target, Vector3 rotation, RecRoomObject referenceObject);
+        bool SetRotationInReferenceObjectSpace(Player target, Quaternion rotation, Player referenceObject);
+        bool SetRotationInReferenceObjectSpace(Player target, Quaternion rotation, RecRoomObject referenceObject);
+        bool SetRotationInReferenceObjectSpace(RecRoomObject target, Vector3 rotation, Player referenceObject);
+        bool SetRotationInReferenceObjectSpace(RecRoomObject target, Vector3 rotation, RecRoomObject referenceObject);
+        bool SetRotationInReferenceObjectSpace(RecRoomObject target, Quaternion rotation, Player referenceObject);
+        bool SetRotationInReferenceObjectSpace(RecRoomObject target, Quaternion rotation, RecRoomObject referenceObject);
+
+        // Set Transform
+        bool SetTransform(Player target, Vector3 position, Vector3 rotation);
+        bool SetTransform(Player target, Vector3 position, Quaternion rotation);
+        bool SetTransform(RecRoomObject target, Vector3 position, Vector3 rotation);
+        bool SetTransform(RecRoomObject target, Vector3 position, Quaternion rotation);
+
+        // Set Transform In Reference Object Space
+        bool SetTransformInReferenceObjectSpace(Player target, Vector3 position, Vector3 rotation, Player referenceObject);
+        bool SetTransformInReferenceObjectSpace(Player target, Vector3 position, Vector3 rotation, RecRoomObject referenceObject);
+        bool SetTransformInReferenceObjectSpace(Player target, Vector3 position, Quaternion rotation, Player referenceObject);
+        bool SetTransformInReferenceObjectSpace(Player target, Vector3 position, Quaternion rotation, RecRoomObject referenceObject);
+        bool SetTransformInReferenceObjectSpace(RecRoomObject target, Vector3 position, Vector3 rotation, Player referenceObject);
+        bool SetTransformInReferenceObjectSpace(RecRoomObject target, Vector3 position, Vector3 rotation, RecRoomObject referenceObject);
+        bool SetTransformInReferenceObjectSpace(RecRoomObject target, Vector3 position, Quaternion rotation, Player referenceObject);
+        bool SetTransformInReferenceObjectSpace(RecRoomObject target, Vector3 position, Quaternion rotation, RecRoomObject referenceObject);
+
+        // SFX Constant
+        Audio SFXConstant(SFXConstantData config);
+
+        // SFX Get Is Playing
+        bool SFXGetIsPlaying(SFX target);
+
+        // SFX Get Volume
+        int SFXGetVolume(SFX target);
+
+        // SFX Play
+        void SFXPlay(SFX target);
+
+        // SFX Set Volume
+        void SFXSetVolume(SFX target, int value);
+
+        // SFX Stop
+        void SFXStop(SFX target);
+
+        // Share Camera Get Is Spawned
+        bool ShareCameraGetIsSpawned(Player player);
+
+        // Show Banner Notification
+        void ShowBannerNotification(Player player, string title, string mainText, float duration);
+
+        // Show Purchase Prompt
+        void ShowPurchasePromptR1(RoomKey inRoomPurchasable, Player player);
+        void ShowPurchasePromptR1(Consumable inRoomPurchasable, Player player);
+        void ShowPurchasePromptR1(RoomCurrency inRoomPurchasable, Player player);
+
+        // Show Purchase Prompt
+        void ShowPurchasePromptR2(RoomOffer inRoomPurchasable, Player player);
+
+        // Show Reward Notification
+        void ShowRewardNotification(Player player, Reward reward, float duration);
+        void ShowRewardNotification(Player player, List<Reward> reward, float duration);
+
+        // Sin
+        float Sin(float value);
+
+        // Skydome Constant
+        Skydome SkydomeConstant();
+
+        // Slerp
+        Quaternion Slerp(Quaternion start, Quaternion end, float progress);
+        Vector3 Slerp(Vector3 start, Vector3 end, float progress);
+
+        // Spawner Internal Start Spawning
+        void SpawnerInternalStartSpawningR1(RecRoomObject spawner, int amountOfObjectsToSpawn, float timeBetweenSpawns, Vector3 spawnPosition);
+
+        // Spawner Reset
+        void SpawnerResetR1(RecRoomObject port1);
+
+        // State
+        void State();
+
+        // State Constant
+        State StateConstant();
+
+        // State Machine
+        void StateMachine();
+
+        // Stop Camera Shake
+        void StopCameraShake(Player player);
+
+        // Storefront Get Is Enabled
+        bool StorefrontGetIsEnabledR2(Storefront storefront);
+
+        // Storefront Set Is Enabled
+        void StorefrontSetIsEnabledR2(Storefront storefront, bool isEnabled);
+
+        // Storefront Set Offers List
+        void StorefrontSetOffersListR2(Storefront storefront, List<RoomOffer> offersList);
+
+        // String Concat
+        string StringConcat(params string[] separator);
+
+        // String Contains
+        bool StringContains(string @string, string sequence);
+
+        // String Index Of
+        int StringIndexOf(string @string, string substring);
+
+        // String Length
+        int StringLength(string @string);
+
+        // String Replace
+        string StringReplace(string @string, string pattern, string replacement);
+
+        // String Substring
+        string StringSubstring(string @string, int index, int length);
+
+        // String To Lower
+        string StringToLower(string @string);
+
+        // String To Upper
+        string StringToUpper(string @string);
+
+        // String Trim
+        string StringTrim(string @string);
+
+        // Studio Audio Constant
+        Audio StudioAudioConstant(SFXConstantData config);
+
+        // Studio Event Sender
+        void StudioEventSender(StudioObject studioObject, string @event);
+
+        // Studio Event Sender Bool
+        void StudioEventSenderBool(StudioObject studioObject, string @event, bool value);
+
+        // Studio Event Sender Float
+        void StudioEventSenderFloat(StudioObject studioObject, string @event, float value);
+
+        // Studio Event Sender Int
+        void StudioEventSenderInt(StudioObject studioObject, string @event, int value);
+
+        // Studio Event Sender String
+        void StudioEventSenderString(StudioObject studioObject, string @event, string value);
+
+        // Studio Event Sender String Bool
+        void StudioEventSenderStringBool(StudioObject studioObject, string @event, string value0, bool value1);
+
+        // Studio Event Sender String Float
+        void StudioEventSenderStringFloat(StudioObject studioObject, string @event, string value0, float value1);
+
+        // Studio Event Sender String Int
+        void StudioEventSenderStringInt(StudioObject studioObject, string @event, string value0, int value1);
+
+        // Studio Event Sender String String
+        void StudioEventSenderStringString(StudioObject studioObject, string @event, string value0, string value1);
+
+        // Studio Object Get Property Bool
+        bool StudioObjectGetPropertyBool(StudioObject studioObject, string property);
+
+        // Studio Object Get Property Color
+        Color StudioObjectGetPropertyColor(StudioObject studioObject, string property);
+
+        // Studio Object Get Property Float
+        float StudioObjectGetPropertyFloat(StudioObject studioObject, string property);
+
+        // Studio Object Get Property Int
+        int StudioObjectGetPropertyInt(StudioObject studioObject, string property);
+
+        // Studio Object Get Property Quaternion
+        Quaternion StudioObjectGetPropertyQuaternion(StudioObject studioObject, string property);
+
+        // Studio Object Get Property String
+        string StudioObjectGetPropertyString(StudioObject studioObject, string property);
+
+        // Studio Object Get Property Vector 3
+        Vector3 StudioObjectGetPropertyVector3(StudioObject studioObject, string property);
+
+        // Subtract
+        int Subtract(params int[] value);
+        float Subtract(params float[] value);
+        Vector3 Subtract(params Vector3[] value);
+
+        // Sun Constant
+        Sun SunConstant();
+
+        // Swing Handle Get Is Swinging
+        bool SwingHandleGetIsSwinging(SwingHandle target);
+
+        // Tan
+        float Tan(float value);
+
+        // Text Get Color
+        Color TextGetColor(Text target);
+
+        // Text Get Text
+        string TextGetText(Text target);
+
+        // Text Set Color
+        void TextSetColor(Text target, Color color);
+
+        // Text Set Material
+        void TextSetMaterial(Text target, int material);
+
+        // Text Set Text
+        void TextSetText(Text target, string text);
+
+        // Time Get Precise Seconds
+        float TimeGetPreciseSeconds();
+
+        // Time Get Universal Seconds
+        int TimeGetUniversalSeconds();
+
+        // Time Get Unsynced Universal Seconds
+        int TimeGetUnsyncedUniversalSeconds();
+
+        // To Combatant
+        Combatant ToCombatantR1(AI playerOrAI);
+        Combatant ToCombatantR1(Player playerOrAI);
+
+        // Toggle Button Get Is Pressed
+        bool ToggleButtonGetIsPressed(ToggleButton target);
+
+        // Toggle Button Set Is Pressed
+        void ToggleButtonSetIsPressed(ToggleButton target, bool value);
+
+        // Touchpad Component Get Interaction Label
+        string TouchpadComponentGetInteractionLabel(Touchpad target);
+
+        // Touchpad Component Get Is Enabled
+        bool TouchpadComponentGetIsEnabled(Touchpad target);
+
+        // Touchpad Component Set Interaction Label
+        void TouchpadComponentSetInteractionLabel(Touchpad target, string label);
+
+        // Touchpad Component Set Is Enabled
+        void TouchpadComponentSetIsEnabled(Touchpad target, bool enabled);
+
+        // Trail Get Color
+        Color TrailGetColor(MotionTrail target);
+
+        // Trail Get Enabled
+        bool TrailGetEnabled(MotionTrail target);
+
+        // Trail Get Lifetime
+        float TrailGetLifetime(MotionTrail target);
+
+        // Trail Get Opacity
+        float TrailGetOpacity(MotionTrail target);
+
+        // Trail Set Color
+        void TrailSetColor(MotionTrail target, Color color);
+
+        // Trail Set Enabled
+        void TrailSetEnabled(MotionTrail target, bool enabled);
+
+        // Trail Set Lifetime
+        void TrailSetLifetime(MotionTrail target, float lifetime);
+
+        // Trail Set Opacity
+        void TrailSetOpacity(MotionTrail target, float maxOpacity);
+
+        // Trigger Handle Get Primary Action Held
+        bool TriggerHandleGetPrimaryActionHeld(TriggerHandle target);
+
+        // Trigger Volume Get Filter Role
+        string TriggerVolumeGetFilterRoleR1(TriggerVolume target);
+
+        // Trigger Volume Get Object Count
+        int TriggerVolumeGetObjectCount(TriggerVolume target);
+
+        // Trigger Volume Get Player Count
+        int TriggerVolumeGetPlayerCount(TriggerVolume target);
+
+        // Trigger Volume Set Filter Role
+        void TriggerVolumeSetFilterRoleR1(TriggerVolume target, string value);
+
+        // Trigger Volume Set Object Filter Tags
+        void TriggerVolumeSetObjectFilterTags(TriggerVolume target, List<string> tags);
+
+        // Trigger Volume Set Player Filter Tags
+        void TriggerVolumeSetPlayerFilterTagsR2(TriggerVolume target, List<string> tags);
+
+        // Unequip From Player
+        bool UnequipFromPlayer(Player player, RecRoomObject @object);
+
+        // Unequip Object
+        bool UnequipObject(RecRoomObject @object);
+
+        // Vector 3 Clamp Magnitude
+        Vector3 Vector3ClampMagnitude(Vector3 vector, float maxLength);
+
+        // Vector 3 Closest Point On Plane
+        Vector3 Vector3ClosestPointOnPlane(Vector3 position, Vector3 planePosition, Vector3 planeNormal);
+
+        // Vector 3 Create
+        Vector3 Vector3Create(float x, float y, float z);
+
+        // Vector 3 Cross
+        Vector3 Vector3Cross(Vector3 lhs, Vector3 rhs);
+
+        // Vector 3 Dot
+        float Vector3Dot(Vector3 lhs, Vector3 rhs);
+
+        // Vector 3 Inverse
+        Vector3 Vector3Inverse(Vector3 value);
+
+        // Vector 3 Inverse Transform
+        Vector3 Vector3InverseTransform(Vector3 worldPoint, Vector3 worldOrigin, Quaternion worldOrientation);
+
+        // Vector 3 Move Towards
+        Vector3 Vector3MoveTowards(Vector3 current, Vector3 target, float maxDelta);
+
+        // Vector 3 Normalize
+        Vector3 Vector3Normalize(Vector3 value);
+
+        // Vector 3 Project
+        Vector3 Vector3Project(Vector3 vector, Vector3 onNormal);
+
+        // Vector 3 Project On Plane
+        Vector3 Vector3ProjectOnPlane(Vector3 vector, Vector3 planeNormal);
+
+        // Vector 3 Scale
+        Vector3 Vector3Scale(Vector3 value, int scalar);
+        Vector3 Vector3Scale(Vector3 value, float scalar);
+
+        // Vector 3 Transform
+        Vector3 Vector3Transform(Vector3 localPoint, Vector3 worldOrigin, Quaternion worldOrientation);
+
+        // Vector Component Get Vector
+        Vector3 VectorComponentGetVector(VectorComponent direction, float magnitude);
+
+        // Vector Get Magnitude
+        float VectorGetMagnitude(Vector3 vector3);
+
+        // Velocity Add
+        void VelocityAdd(Player target, float multiplier, Vector3 velocity, float maximumSpeed);
+        void VelocityAdd(RecRoomObject target, float multiplier, Vector3 velocity, float maximumSpeed);
+
+        // Velocity Reflect
+        void VelocityReflect(Player target, float additionalSpeed, float speedMultiplier, Vector3 direction, float maximumSpeed);
+        void VelocityReflect(RecRoomObject target, float additionalSpeed, float speedMultiplier, Vector3 direction, float maximumSpeed);
+
+        // Velocity Set
+        void VelocitySet(Player target, float multiplier, Vector3 velocity);
+        void VelocitySet(RecRoomObject target, float multiplier, Vector3 velocity);
+
+        // Welcome Mat Get Enabled
+        bool WelcomeMatGetEnabled(WelcomeMat target);
+
+        // Welcome Mat Set Enabled
+        void WelcomeMatSetEnabled(WelcomeMat target, bool enabled);
+
+        // Xor
+        bool Xor(bool input);
+
+    }
+}
