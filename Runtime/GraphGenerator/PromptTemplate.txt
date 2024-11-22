@@ -1,0 +1,21 @@
+`IChips.cs` interface:
+```cs
+[CHIPS]
+```
+
+Above is a C# interface that consists of the only methods that are available to program a 3D multiplayer game. Use this interface and standard C# operators, keywords, and syntax to write a single method, `CircuitGraph`, to accomplish the following task. Do NOT use ANY OTHER C# functions to complete the method, including those from `System`, as well as instance methods. `CircuitGraph` exists in a class that implements `IChips`, so the methods can be called directly. The method implementation MUST follow the root-scope variable declaration policy, such that no variables are defined in inner blocks delimited by curly braces, and are only declared in the root scope of the method.
+
+Your response should be written in the following format:
+```cs
+public override void CircuitGraph()
+{
+    // Custom implementation goes here
+}
+```
+
+
+Task:
+[PROMPT]
+
+
+Think through it step by step. Before making a method call, make sure that it is provided in the interface above. Please give your answer below. 
