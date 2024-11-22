@@ -1,11 +1,13 @@
-﻿using System;
+﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis;
+using RRCG.Optimizer;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEditor;
 using UnityEditor.Compilation;
+using UnityEngine;
 
 namespace RRCG
 {
@@ -28,7 +30,7 @@ namespace RRCG
 
         protected void OnPreprocessAsset()
         {
-            if (!AutoCompile) return;
+            if (!AutoCompile && assetPath != PromptWindow.GeneratedFile) return;
             if (!assetPath.EndsWith(".rrcg.cs")) return;
 
             // Queue the file for compilation, and request script compilation.
@@ -80,6 +82,25 @@ namespace RRCG
                 foreach (var file in filesToCompile)
                     CompileRRCGFiles.Remove(file);
             }
+        }
+
+        protected static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths, bool didDomainReload)
+        {
+            var generated = importedAssets.FirstOrDefault(file =>
+                file.StartsWith(PromptWindow.GENERATED_PATH) &&
+                file.EndsWith("rrcg.gen.cs")
+            );
+            if (!string.IsNullOrEmpty(generated)) OpenDOTVisualizer(generated);
+        }
+
+        private static void OpenDOTVisualizer(string assetPath)
+        {
+            var className = assetPath.Split("/").Last().Split(".").First();
+            var (assembly, descriptor) = ("Assembly-CSharp", "RRCGBuild." + className);
+            var context = RoslynFrontend.GetBuilt(assembly, descriptor);
+            context = GraphOptimizer.Optimize(context);
+            var dotGraph = DotGraphBackend.Build(context);
+            Application.OpenURL("https://dreampuf.github.io/GraphvizOnline/#" + Uri.EscapeDataString(dotGraph));
         }
     }
 }
